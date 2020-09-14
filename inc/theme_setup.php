@@ -27,7 +27,7 @@ add_action( 'after_switch_theme', 'check_theme_dependencies', 10, 2 );
 // Kirki validation text
 function update_activation_admin_notice_kirki( $translated, $original, $domain ) {
     $strings = array(
-        'New theme activated.' => 'Theme not activated. CPRS theme has dependency with kirki plugin. You must activate <a target="_blank" href="https://wordpress.org/plugins/kirki/">kirki plugin</a> first before activating this theme.'
+        'New theme activated.' => 'Theme not activated. Bootstrap4 Theme has dependency with kirki plugin. You must activate <a target="_blank" href="https://wordpress.org/plugins/kirki/">kirki plugin</a> first before activating this theme.'
     );
 
     if ( isset( $strings[$original] ) ) {
@@ -41,7 +41,7 @@ function update_activation_admin_notice_kirki( $translated, $original, $domain )
 // ACF validation text
 function update_activation_admin_notice_acf( $translated, $original, $domain ) {
     $strings = array(
-        'New theme activated.' => 'Theme not activated. CPRS theme has dependency with ACF plugin. You must activate <a target="_blank" href="https://wordpress.org/plugins/advanced-custom-fields/">ACF plugin</a> first before activating this theme.'
+        'New theme activated.' => 'Theme not activated. Bootstrap4 Theme has dependency with ACF plugin. You must activate <a target="_blank" href="https://wordpress.org/plugins/advanced-custom-fields/">ACF plugin</a> first before activating this theme.'
     );
 
     if ( isset( $strings[$original] ) ) {
