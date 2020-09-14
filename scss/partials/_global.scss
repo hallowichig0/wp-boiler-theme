@@ -1,0 +1,22 @@
+/*
+ * Global
+ */
+
+#content.site-content {
+    padding-bottom: 3.75rem;
+    padding-top: 4.125rem;
+}
+
+.entry-title {
+    & > a {
+        color: inherit;
+    }
+}
+body{
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+main.main-wrapper {
+    flex-grow: 1;
+}

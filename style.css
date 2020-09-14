@@ -1,0 +1,168 @@
+/*
+Theme Name: Bootstrap4 Theme
+Author: hallowichig0
+Description: My personal boiler theme.
+Version: 1.0.0
+Tags: Bootstrap 4, SCSS, Kirki, ACF
+Text Domain: bootstrap4
+*/
+/*
+ * Variables
+ */
+/*
+ * Mixins
+ */
+/*
+ * Animations
+ */
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+/*
+ * Global
+ */
+#content.site-content {
+  padding-bottom: 3.75rem;
+  padding-top: 4.125rem; }
+
+.entry-title > a {
+  color: inherit; }
+
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh; }
+
+main.main-wrapper {
+  flex-grow: 1; }
+
+/*
+ * Admin Style
+ */
+.admin-bar .nav-header {
+  margin-top: 32px; }
+.admin-bar .sticky-header {
+  top: 32px; }
+
+@media screen and (max-width: 782px) {
+  .admin-bar .nav-header {
+    margin-top: 46px; }
+  .admin-bar .sticky-header {
+    top: 46px; } }
+/*
+ * Header
+ */
+/* Menu */
+.sticky-header-top {
+  margin-top: 88px !important; }
+
+.sticky-header {
+  position: fixed !important;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030; }
+
+/* Hamburger Menu with animation */
+.navbar-toggler {
+  border: none;
+  background: transparent !important; }
+  .navbar-toggler .icon-bar {
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    display: block;
+    transition: all 0.2s;
+    margin-top: 7px;
+    margin-bottom: 7px; }
+  .navbar-toggler .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%; }
+  .navbar-toggler .middle-bar {
+    opacity: 0; }
+  .navbar-toggler .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%; }
+  .navbar-toggler.collapsed .top-bar {
+    transform: rotate(0);
+    transform-origin: 10% 10%; }
+  .navbar-toggler.collapsed .middle-bar {
+    opacity: 1; }
+  .navbar-toggler.collapsed .bottom-bar {
+    transform: rotate(0);
+    transform-origin: 10% 90%; }
+
+/* Active Links */
+.navbar-dark .navbar-nav > .nav-item {
+  margin: 0 15px; }
+.navbar-dark .navbar-nav .nav-item.active {
+  background-color: #ffffff;
+  border-radius: 5px; }
+  .navbar-dark .navbar-nav .nav-item.active > .nav-link {
+    color: #000000; }
+.navbar-dark .navbar-nav .nav-item.dropdown .dropdown-menu .nav-link {
+  color: #000000; }
+
+/*
+ * Footer
+ */
+/* Social Media Icon */
+.social-media h5 {
+  font-size: 1.10rem; }
+.social-media .social-menu a:hover {
+  text-decoration: none !important; }
+.social-media .social-menu a .social-icon {
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+/*
+ * Comments
+ */
+.comment-list {
+  padding-left: 0; }
+  .comment-list .comment {
+    display: block; }
+    .comment-list .comment .comment-body .pull-left {
+      padding-right: 0.625rem; }
+    .comment-list .comment .comment-body .media-body .media-body-wrap .comment-content.card-block {
+      padding: 20px; }
+
+/*
+ * Single Post
+ */
+.site-content .comment-navigation, .site-content .posts-navigation, .site-content .post-navigation {
+  margin: 0 0 1.5em;
+  overflow: hidden; }
+
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  word-wrap: normal !important; }
+
+.post-navigation {
+  padding-top: 1.875rem; }
+  .post-navigation .nav-links .nav-previous {
+    float: left;
+    width: 50%; }
+    .post-navigation .nav-links .nav-previous a::before {
+      content: "\2190 "; }
+  .post-navigation .nav-links .nav-next {
+    float: right;
+    text-align: right;
+    width: 50%; }
+    .post-navigation .nav-links .nav-next a::after {
+      content: " \2192"; }
+  .post-navigation .nav-links .nav-previous a, .post-navigation .nav-links .nav-next a {
+    border: 1px solid #ddd;
+    border-radius: 0.938rem;
+    display: inline-block;
+    padding: 0.313rem 0.875rem;
+    text-decoration: none; }
+
+/*# sourceMappingURL=style.css.map */
