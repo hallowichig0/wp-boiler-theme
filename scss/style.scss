@@ -18,6 +18,9 @@ Text Domain: bootstrap4
 @import 'partials/social-media';
 @import 'partials/comment'; // comments style for blog
 
+// Your fonts here
+@import "partials/fonts";
+
 // Your posts style here
 @import 'posts/single'; // single post style
 
