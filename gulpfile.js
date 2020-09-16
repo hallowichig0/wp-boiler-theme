@@ -71,6 +71,10 @@ const move_plugins = () => {
       "node_modules/venobox/venobox/**/*",
       "node_modules/lazysizes/**/*",
       "node_modules/font-awesome/**/*",
+      "node_modules/jquery-once/**/*",
+      "node_modules/jquery-ui-dist/**/*",
+      "node_modules/jquery-once/**/*",
+      "node_modules/jquery-match-height/**/*",
     ], { base: './node_modules' })
     .pipe(gulp.dest('vendor'));
 }

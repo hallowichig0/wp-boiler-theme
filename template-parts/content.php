@@ -6,6 +6,7 @@
  *
  * @package Bootstrap4
  */
+global $post;
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
@@ -14,7 +15,11 @@
         <!-- Preview Image -->
         <?php
         if ( has_post_thumbnail() ) {
-            echo get_the_post_thumbnail( $post_id, 'post-thumbnails', array( 'class' => 'img-fluid rounded' ) );
+            /*
+            * To apply lazysizes with blurred effect. Use get_the_post_thumbnail_url instead
+            * and apply the html structure of blurred effect.
+            */
+            echo get_the_post_thumbnail( $post->ID, 'post-thumbnails', array( 'class' => 'img-fluid rounded' ) );
         } 
         ?>
         <div class="card-body">

@@ -1,7 +1,7 @@
 {
-  "name": "bootstrap_theme",
+  "name": "bootstrap_boiler_theme",
   "version": "1.0.0",
-  "description": "Bootstrap Theme Implementation",
+  "description": "Bootstrap 4 ACF, Kirki, SASS implementation",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,16 +9,21 @@
   "keywords": [
     "SASS",
     "Bootstrap",
+    "ACF",
+    "Kirki",
     "Wordpress"
   ],
   "author": "@hallowichig0",
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "jquery": "3.4.1",
     "font-awesome": "^4.7.0",
-    "venobox": "^1.8.5",
-    "lazysizes": "^5.2.0"
+    "jquery": "3.4.1",
+    "jquery-match-height": "^0.7.2",
+    "jquery-once": "^2.2.3",
+    "jquery-ui-dist": "^1.12.1",
+    "lazysizes": "^5.2.0",
+    "venobox": "^1.8.5"
   },
   "devDependencies": {
     "browser-sync": "^2.26.5",

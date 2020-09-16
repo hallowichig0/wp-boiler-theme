@@ -71,7 +71,7 @@ function bootstrap4_setup() {
     add_theme_support( 'post-thumbnails');
 
     // Banner Size
-    add_image_size( 'banner_scale', 1920, 1080, true );
+    add_image_size( 'banner-scale', 1920, 1080, true );
 
     // Register Navigation Menu
     register_nav_menus( array(

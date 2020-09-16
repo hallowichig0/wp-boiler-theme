@@ -13,16 +13,23 @@ function bootstrap_scripts() {
 
     // css
     wp_enqueue_style( 'bootstrap-css', $directory_uri . '/vendor/bootstrap/dist/css/bootstrap.min.css' );
-    wp_enqueue_style( 'font-awesome', $directory_uri . '/vendor/font-awesome/css/font-awesome.min.css' );
-    wp_enqueue_style( 'slick-style', $directory_uri . '/assets/slick/slick.css' );
-    wp_enqueue_style( 'custom-style', $directory_uri . '/css/custom.css' );
-    wp_enqueue_style( 'theme-style', get_stylesheet_uri() );
+    wp_enqueue_style( 'font-awesome-css', $directory_uri . '/vendor/font-awesome/css/font-awesome.min.css' );
+    // wp_enqueue_style( 'venobox-css', $directory_uri . '/vendor/venobox/venobox/venobox.min.css' );
+    // wp_enqueue_style( 'slick-css', $directory_uri . '/assets/slick/slick.css' );
+    wp_enqueue_style( 'custom-css', $directory_uri . '/css/custom.css' );
+    wp_enqueue_style( 'theme-css', get_stylesheet_uri() );
 
     // script
     wp_enqueue_script('jquery');
-    wp_enqueue_script('jquery-script', $directory_uri . '/vendor/jquery/dist/jquery.min.js','','',true);
-    wp_enqueue_script('bootstrap-bundle', $directory_uri . '/vendor/bootstrap/dist/js/bootstrap.bundle.min.js','','',true);
-    wp_enqueue_script('slick-js', $directory_uri . '/assets/slick/slick.js','','',true);
+    wp_enqueue_script('jquery-js', $directory_uri . '/vendor/jquery/dist/jquery.min.js','','',true);
+    wp_enqueue_script('jquery-once-js', $directory_uri . '/vendor/jquery-once/jquery.once.min.js','','',true);
+    wp_enqueue_script('jquery-ui-js', $directory_uri . '/vendor/jquery-ui-dist/jquery-ui.min.js','','',true);
+    // wp_enqueue_script('jquery-match-height-js', $directory_uri . '/vendor/jquery-match-height/dist/jquery.matchHeight-min.js','','',true);
+    wp_enqueue_script('bootstrap-bundle-js', $directory_uri . '/vendor/bootstrap/dist/js/bootstrap.min.js','','',true);
+    // wp_enqueue_script('venobox-js', $directory_uri . '/vendor/venobox/venobox/venobox.min.js','','',true);
+    // wp_enqueue_script('lazysizes-js', $directory_uri . '/vendor/lazysizes/lazysizes.min.js','','',true);
+    // wp_enqueue_script('lazysizes-unveilhooks-js', $directory_uri . '/vendor/lazysizes/plugins/unveilhooks/ls.unveilhooks.min.js','','',true);
+    // wp_enqueue_script('slick-js', $directory_uri . '/assets/slick/slick.js','','',true);
     wp_enqueue_script('theme-js', $directory_uri . '/js/main.js','','',true);
 }
 

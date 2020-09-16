@@ -30,12 +30,60 @@ Text Domain: bootstrap4
   color: inherit; }
 
 body {
+  font-size: 16px;
+  line-height: 1.3em;
+  overflow-y: auto;
   display: flex;
   flex-flow: column;
   min-height: 100vh; }
 
 main.main-wrapper {
   flex-grow: 1; }
+
+p:last-of-type {
+  margin-bottom: 0; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+.container {
+  max-width: 1200px;
+  width: 100%; }
+
+/*
+ * Loading animation
+ */
+header.nav-header,
+main.main-wrapper,
+footer.site-footer {
+  opacity: 0; }
+
+.pre-loader {
+  width: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 99999; }
+  .pre-loader .loader {
+    border: 10px solid #ada8a8;
+    -webkit-animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-top: 10px solid #343a40;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    margin: 0 auto;
+    text-align: center; }
+  .pre-loader p {
+    font-family: sans-serif;
+    color: #000000;
+    text-align: center;
+    margin-top: 20px; }
 
 /*
  * Admin Style
@@ -107,6 +155,31 @@ main.main-wrapper {
 /*
  * Footer
  */
+/*
+ * Overrides
+ */
+/*
+ * Back to top
+ */
+.backtotop {
+  width: 50px;
+  height: 50px;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0.7;
+  position: fixed;
+  cursor: pointer;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  background-color: #000000; }
+  .backtotop:hover {
+    background-color: #1f1f1f; }
+  .backtotop svg {
+    width: 56%; }
+
 /* Social Media Icon */
 .social-media h5 {
   font-size: 1.10rem; }

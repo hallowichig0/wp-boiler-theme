@@ -31,15 +31,13 @@ get_header();
 			?>">
 			
 				<?php
-				if ( have_posts() ) :
+				if ( have_posts() ) {
 
-					if ( is_home() && ! is_front_page() ) : ?>
-						<header>
-							<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-						</header>
-								
+					if ( is_home() && ! is_front_page() ) {
+				?>
+						<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 					<?php
-					endif;
+					}
 					/* Start the Loop */
 					while ( have_posts() ) : the_post();
 
@@ -68,21 +66,21 @@ get_header();
 					</ul>
 
 				<?php
-				else :
-
+				}
+				else {
 					get_template_part( 'template-parts/content', 'none' );
-
-				endif; ?>
+				}
+				?>
 
 			</div><!-- #first -->
 			<?php
-			if(is_home()) :
+			if(is_home()) {
 				if(class_exists( 'Kirki' )){
 					if ( true == get_theme_mod('sidebar_blog_toggleSwitch_setting')) :
 						get_sidebar();
 					endif;
 				}
-			endif;
+			}
 			?>
 		</div><!-- .row -->
 	</section><!-- .container -->
