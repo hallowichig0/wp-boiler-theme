@@ -20,7 +20,7 @@ These instructions will get you a copy of the project up and running on your loc
 - NPM version >= 6.7.0
 - Gulp CLI latest version
 
-### # Drupal Installation
+### # Theme Installation
 ```
 NOTE: before running the installation, please make sure to follow the requirements above.
 ```
