@@ -47,10 +47,10 @@ function add_additional_class_on_a($classes, $item, $args) {
 add_filter('nav_menu_link_attributes', 'add_additional_class_on_a', 10, 3);
 
 // Filter to change cols and rows in "woocommerce checkout order notes"
-function custom_override_checkout_fields( $fields ) {
+// function custom_override_checkout_fields( $fields ) {
 
-    $fields['order']['order_comments']['custom_attributes'] = array('cols' => 100, 'rows' => 9);
+//     $fields['order']['order_comments']['custom_attributes'] = array('cols' => 100, 'rows' => 9);
 
-    return $fields;
-}
-add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+//     return $fields;
+// }
+// add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );

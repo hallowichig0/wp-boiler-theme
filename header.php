@@ -19,7 +19,6 @@ $header_logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 	<title>
 		<?php

@@ -11,7 +11,7 @@ if (is_home()) {
 ?>
     <!-- Sidebar Widgets Column -->
     <aside id="secondary" class="widget-area col-sm-12 col-md-4" role="complementary">
-
+    <?php dynamic_sidebar( 'sidebar-blog' ); ?>
     <?php
     if(class_exists( 'Kirki' )){
 

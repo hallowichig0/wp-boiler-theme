@@ -1,6 +1,6 @@
 <?php
 /**
- * Bootstrap functions and definitions
+ * Bootstrap4 Theme functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -8,7 +8,7 @@
  */
 $get_template_directory = get_template_directory();
 
-function bootstrap_scripts() {
+function bootstrap4_scripts() {
     $directory_uri = get_template_directory_uri();
 
     // css
@@ -25,15 +25,48 @@ function bootstrap_scripts() {
     wp_enqueue_script('jquery-once-js', $directory_uri . '/vendor/jquery-once/jquery.once.min.js','','',true);
     wp_enqueue_script('jquery-ui-js', $directory_uri . '/vendor/jquery-ui-dist/jquery-ui.min.js','','',true);
     // wp_enqueue_script('jquery-match-height-js', $directory_uri . '/vendor/jquery-match-height/dist/jquery.matchHeight-min.js','','',true);
-    wp_enqueue_script('bootstrap-bundle-js', $directory_uri . '/vendor/bootstrap/dist/js/bootstrap.min.js','','',true);
+    wp_enqueue_script('bootstrap-js', $directory_uri . '/vendor/bootstrap/dist/js/bootstrap.min.js','','',true);
     // wp_enqueue_script('venobox-js', $directory_uri . '/vendor/venobox/venobox/venobox.min.js','','',true);
     // wp_enqueue_script('lazysizes-js', $directory_uri . '/vendor/lazysizes/lazysizes.min.js','','',true);
     // wp_enqueue_script('lazysizes-unveilhooks-js', $directory_uri . '/vendor/lazysizes/plugins/unveilhooks/ls.unveilhooks.min.js','','',true);
     // wp_enqueue_script('slick-js', $directory_uri . '/assets/slick/slick.js','','',true);
     wp_enqueue_script('theme-js', $directory_uri . '/js/main.js','','',true);
-}
 
-add_action( 'wp_enqueue_scripts', 'bootstrap_scripts' );
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'bootstrap4_scripts' );
+
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function bootstrap4_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'bootstrap4_content_width', 1200 );
+}
+add_action( 'after_setup_theme', 'bootstrap4_content_width', 0 );
+
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function bootstrap4_widgets_init() {
+    register_sidebar( array(
+        'name'          => esc_html__( 'Sidebar for blog', 'bootstrap4' ),
+        'id'            => 'sidebar-blog',
+        'description'   => esc_html__( 'Add widgets here.', 'bootstrap4' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ) );
+}
+add_action( 'widgets_init', 'bootstrap4_widgets_init' );
 
 // Override wordpress admin jquery default
 function override_wordpress_jquery () {
@@ -97,13 +130,67 @@ function get_breadcrumb() {
     echo '</ol>';
 }
 
+/**
+ * Add Welcome message to dashboard
+ */
+function bootstrap4_reminder(){
+    $theme_page_url = 'http://jegson.herokuapp.com/';
 
+        if(!get_option( 'triggered_welcomet')){
+            $message = sprintf(__( 'Welcome to Bootstrap4 Theme made by Jayson Garcia! Before diving in to your new theme, please visit the <a style="color: #fff; font-weight: bold;" href="%1$s" target="_blank">theme\'s</a> page for access to dozens of tips and in-depth tutorials.', 'bootstrap4' ),
+                esc_url( $theme_page_url )
+            );
+
+            printf(
+                '<div class="notice is-dismissible" style="background-color: #6C2EB9; color: #fff; border-left: none;">
+                    <p>%1$s</p>
+                </div>',
+                $message
+            );
+            add_option( 'triggered_welcomet', '1', '', 'yes' );
+        }
+
+}
+add_action( 'admin_notices', 'bootstrap4_reminder' );
+
+/**
+ * Custom template tags for this theme.
+ */
 require $get_template_directory . '/inc/template_tags.php';
+
+/**
+ * Theme Setup.
+ */
 require_once ($get_template_directory . '/inc/theme_setup.php');
+
+/**
+ * Theme Filter.
+ */
 require_once ($get_template_directory . '/inc/theme_filter.php');
+
+/**
+ * Customizer additions.
+ */
 require_once ($get_template_directory . '/inc/customizer.php');
+
+/**
+ * Custom widgets.
+ */
 require_once ($get_template_directory . '/inc/custom-widgets/functions/widget-functions.php');
+
+/**
+ * Load custom WordPress nav walker.
+ */
 require_once ($get_template_directory . '/inc/navigation/class-wp-bootstrap-navwalker.php');
+
+/**
+ * Custom field.
+ */
 require_once ($get_template_directory . '/inc/custom-field.php');
+
+/**
+ * Shortcodes for this theme.
+ */
 require_once ($get_template_directory . '/inc/shortcodes.php');
+
 include_once get_theme_file_path( 'inc/kirki/class-kirki-installer-section.php' );
