@@ -16,7 +16,7 @@ if(class_exists( 'Kirki' )){
         'theme_supports' => '',
     ) );
 
-        Kirki::add_field( 'sidebar_blog_toggleSwitch_field', [
+        Kirki::add_field( 'bootstrap4_config', [
             'type'        => 'toggle',
             'settings'    => 'sidebar_blog_toggleSwitch_setting',
             'label'       => esc_html__( 'Enable/Disable', 'bootstrap4' ),

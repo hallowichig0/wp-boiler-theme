@@ -16,7 +16,7 @@ if(class_exists( 'Kirki' )){
         'theme_supports' => '',
     ) );
     
-        Kirki::add_field( 'footer_background_field', [
+        Kirki::add_field( 'bootstrap4_config', [
             'type'        => 'color',
             'settings'    => 'footer_background_setting',
             'label'       => __( 'Color Control (hex-only)', 'bootstrap4' ),
@@ -33,7 +33,7 @@ if(class_exists( 'Kirki' )){
         'theme_supports' => '',
     ) );
 
-        Kirki::add_field( 'footer_copyright_field', [
+        Kirki::add_field( 'bootstrap4_config', [
             'type'     => 'text',
             'settings' => 'footer_copyrightText_setting',
             'label'    => esc_html__( 'Copyright Text', 'bootstrap4' ),
@@ -42,7 +42,7 @@ if(class_exists( 'Kirki' )){
             'priority' => 10,
         ] );
 
-        Kirki::add_field( 'footer_copyrightColor_field', [
+        Kirki::add_field( 'bootstrap4_config', [
             'type'        => 'color',
             'settings'    => 'footer_copyrightColor_setting',
             'label'       => __( 'Copyright Text Color', 'bootstrap4' ),

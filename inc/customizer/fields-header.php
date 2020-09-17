@@ -16,7 +16,7 @@ if(class_exists( 'Kirki' )){
         'theme_supports' => '',
     ) );
 
-        Kirki::add_field( 'header_background_field', [
+        Kirki::add_field( 'bootstrap4_config', [
             'type'        => 'color',
             'settings'    => 'header_background_field_setting',
             'label'       => __( 'Background Color', 'bootstrap4' ),
@@ -34,7 +34,7 @@ if(class_exists( 'Kirki' )){
         'theme_supports' => '',
     ) );
 
-        Kirki::add_field( 'header_logoColorTitle_field', [
+        Kirki::add_field( 'bootstrap4_config', [
             'type'        => 'color',
             'settings'    => 'header_logoColorTitle_field_setting',
             'label'       => __( 'Logo Title Color', 'bootstrap4' ),
@@ -43,7 +43,7 @@ if(class_exists( 'Kirki' )){
             'default'     => '',
         ] );
 
-        Kirki::add_field( 'header_logoColorSubTitle_field', [
+        Kirki::add_field( 'bootstrap4_config', [
             'type'        => 'color',
             'settings'    => 'header_logoColorSubTitle_field_setting',
             'label'       => __( 'Logo Subtitle Color', 'bootstrap4' ),
@@ -61,7 +61,7 @@ if(class_exists( 'Kirki' )){
         'theme_supports' => '',
     ) );
 
-        Kirki::add_field( 'header_contact_field', [
+        Kirki::add_field( 'bootstrap4_config', [
             'type'        => 'text',
             'settings'    => 'header_contactText_field_setting',
             'label'       => __( 'Add Contact Number', 'bootstrap4' ),
@@ -69,7 +69,7 @@ if(class_exists( 'Kirki' )){
             'default'     => '',
         ] );
 
-        Kirki::add_field( 'header_contactColor_field', [
+        Kirki::add_field( 'bootstrap4_config', [
             'type'        => 'color',
             'settings'    => 'header_contactColor_field_setting',
             'label'       => __( 'Logo Text Color', 'bootstrap4' ),
@@ -87,7 +87,7 @@ if(class_exists( 'Kirki' )){
         'theme_supports' => '',
     ) );
 
-        Kirki::add_field( 'header_social_media_repeater', [
+        Kirki::add_field( 'bootstrap4_config', [
             'type'          => 'repeater',
             'section'       => 'header_social_media',
             'priority'      => 10,

@@ -10,7 +10,7 @@ if(class_exists( 'Kirki' )){
         'theme_supports' => '',
     ) );
 
-    Kirki::add_field( 'sidebar_blog_widgets_fields', [
+    Kirki::add_field( 'bootstrap4_config', [
         'type'          => 'repeater',
         'section'       => 'sidebar_blog_widgets',
         'priority'      => 10,
