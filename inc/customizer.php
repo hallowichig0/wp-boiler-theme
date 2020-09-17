@@ -1,6 +1,6 @@
 <?php
 /**
- * CPRS Theme Customizer.
+ * Customizer.
  *
  * @package Bootstrap4
  */
