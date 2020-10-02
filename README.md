@@ -26,13 +26,13 @@ NOTE: before running the installation, please make sure to follow the requiremen
 ```
 
 1. Clone the theme repository inside the wp-content/theme directory
-2. Delete the `.git` folder inside the `wp-boiler` theme folder.
+2. Delete the `.git` folder inside the `wp-boiler-theme` theme folder.
 3. Install Kirki plugin
 4. Install ACF Pro plugin
 
 ### # Theme workflow settings/installation
-1. Run `npm install` inside the `wp-boiler` theme folder.
-1. Run `gulp mvplugins` inside the `wp-boiler` theme folder.
+1. Run `npm install` inside the `wp-boiler-theme` theme folder.
+1. Run `gulp mvplugins` inside the `wp-boiler-theme` theme folder.
 
 #### Available Gulp tasks
 
