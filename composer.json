@@ -11,10 +11,14 @@
     }
   ],
   "keywords": [
-    "wordpress", "theme"
+    "SASS",
+    "Bootstrap",
+    "ACF",
+    "Kirki",
+    "Wordpress"
   ],
   
-  "type": "wordpress-plugin",
+  "type": "wordpress-theme",
   "require": {
     "php": ">=7.1"
   },
