@@ -17,7 +17,6 @@
     "Kirki",
     "Wordpress"
   ],
-  
   "type": "wordpress-theme",
   "require": {
     "php": ">=7.1"
