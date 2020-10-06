@@ -13,8 +13,14 @@
   "keywords": [
     "wordpress", "theme"
   ],
+  
   "type": "wordpress-plugin",
   "require": {
     "php": ">=7.1"
+  },
+  "config": {
+    "github-oauth": {
+          "github.com": "bfe298485c7abac9c3a48a7c9550b2363ae9f789"
+      }
   }
 }
