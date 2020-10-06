@@ -1,4 +1,4 @@
-# Bootstrap 4 Boilerplate for Wordpress
+# Bootstrap 4 Theme Boilerplate for Wordpress
 This boilerplate uses kirki customizer, acf, sass, bootstrap 4, jquery.
 
 ## Features
