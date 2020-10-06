@@ -1,0 +1,20 @@
+{
+  "name": "roots/bedrock",
+  "license": "MIT",
+  "description": "Bootstrap 4 Boilerplate for Wordpress",
+  "homepage": "https://github.com/hallowichig0/wp-boiler-theme",
+  "authors": [
+    {
+      "name": "Jayson Garcia",
+      "email": "garciajayson502@gmail.com",
+      "homepage": "https://github.com/hallowichig0"
+    }
+  ],
+  "keywords": [
+    "wordpress", "theme"
+  ],
+  "type": "wordpress-plugin",
+  "require": {
+    "php": ">=7.1"
+  }
+}
