@@ -75,6 +75,7 @@ const move_plugins = () => {
       "node_modules/venobox/venobox/**/*",
       "node_modules/lazysizes/**/*",
       "node_modules/infinite-scroll/**/*",
+      "node_modules/mmenu-js/**/*",
     ], { base: './node_modules' })
     .pipe(gulp.dest('vendor'));
 }

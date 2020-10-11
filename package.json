@@ -24,6 +24,7 @@
     "jquery-once": "^2.2.3",
     "jquery-ui-dist": "^1.12.1",
     "lazysizes": "^5.2.0",
+    "mmenu-js": "^8.5.18",
     "venobox": "^1.8.5"
   },
   "devDependencies": {
