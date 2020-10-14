@@ -7,7 +7,8 @@
  * @package Bootstrap4
  */
 
-if (is_home()) {
+// Ex. is_singular( array('page', 'post', 'custom_post_type') )
+if (is_home() || is_singular( array('post') )) {
 ?>
     <!-- Sidebar Widgets Column -->
     <aside id="secondary" class="widget-area col-sm-12 col-md-4" role="complementary">
