@@ -25,7 +25,9 @@ if(class_exists( 'Kirki' )){
             'priority'    => 10,
         ] );
     
-    // Sidebar Widgets
+    /**
+     * Sidebar Widgets
+     */
     include_once wp_normalize_path( get_template_directory() . '/inc/customizer/sidebar-widgets.php' );
     
 }

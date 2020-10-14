@@ -10,8 +10,10 @@ if(class_exists( 'Kirki' )){
         'capability'    => 'edit_theme_options',
         'option_type'   => 'theme_mod',
     ) );
-
-    // Include files for panels, section & fields.
+    
+    /**
+     * Include files for panels, section & fields.
+     */
     include_once wp_normalize_path( get_template_directory() . '/inc/customizer/fields-header.php' );
     include_once wp_normalize_path( get_template_directory() . '/inc/customizer/fields-footer.php' );
     include_once wp_normalize_path( get_template_directory() . '/inc/customizer/fields-sidebar.php' );

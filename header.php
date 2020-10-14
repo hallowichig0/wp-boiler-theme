@@ -30,6 +30,8 @@ $header_logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+	<?php wp_body_open(); ?>
+	
 	<!-- Loading Animation -->
 	<div class="pre-loader">
 		<div class="loader"></div>

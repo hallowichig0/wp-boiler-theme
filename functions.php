@@ -190,6 +190,12 @@ require_once ($get_template_directory . '/inc/navigation/class-wp-bootstrap-navw
  */
 require_once ($get_template_directory . '/inc/custom-field.php');
 
+
+/**
+ * Custom post type.
+ */
+require_once ($get_template_directory . '/inc/custom-post-type.php');
+
 /**
  * Shortcodes for this theme.
  */

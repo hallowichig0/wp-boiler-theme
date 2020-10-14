@@ -7,6 +7,7 @@ Version: 1.0.0
 Tags: Bootstrap 4, SCSS, Kirki, ACF
 Text Domain: bootstrap4
 */
+/* Your custom partials here */
 /*
  * Variables
  */
@@ -204,9 +205,11 @@ footer.site-footer {
     .comment-list .comment .comment-body .media-body .media-body-wrap .comment-content.card-block {
       padding: 20px; }
 
+/* Your fonts here */
 /*
  * Fonts
  */
+/* Your posts style here */
 /*
  * Single Post
  */
@@ -241,5 +244,8 @@ footer.site-footer {
     display: inline-block;
     padding: 0.313rem 0.875rem;
     text-decoration: none; }
+
+/* Your pages style here */
+/* Your woocommerce style here */
 
 /*# sourceMappingURL=style.css.map */

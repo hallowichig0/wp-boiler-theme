@@ -8,7 +8,7 @@ Tags: Bootstrap 4, SCSS, Kirki, ACF
 Text Domain: bootstrap4
 */
 
-// Your custom partials here:
+/* Your custom partials here */
 @import "partials/variables";
 @import "partials/mixin";
 @import "partials/animations";
@@ -20,15 +20,13 @@ Text Domain: bootstrap4
 @import 'partials/social-media';
 @import 'partials/comment'; // comments style for blog
 
-// Your fonts here
+/* Your fonts here */
 @import "partials/fonts";
 
-// Your posts style here
+/* Your posts style here */
 @import 'posts/single'; // single post style
 
-// Your pages style here
+/* Your pages style here */
 
-// Your templates style here
-
-// Your woocommerce style here
+/* Your woocommerce style here */
 // @import 'woocommerce/woocommerce'; // _woocommerce.scss
