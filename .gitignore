@@ -3,3 +3,7 @@
 
 # Ignore vendor directory
 /vendor
+
+# Mac OS autogenerate files
+.DS_Store
+**/.DS_Store
