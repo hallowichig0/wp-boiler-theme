@@ -63,6 +63,39 @@ function add_additional_class_on_a($classes, $item, $args) {
 add_filter('nav_menu_link_attributes', 'add_additional_class_on_a', 10, 3);
 
 /**
+ * @summary        filters an enqueued style tag and adds a noscript element after it
+ * 
+ * @description    filters an enqueued style tag (identified by the $handle variable) and
+ *                 adds a noscript element after it.
+ * 
+ * @access    public
+ * @param     string    $tag       The tag string sent by `style_loader_tag` filter on WP_Styles::do_item
+ * @param     string    $handle    The script handle as sent by `script_loader_tag` filter on WP_Styles::do_item
+ * @param     string    $href      The style tag href parameter as sent by `script_loader_tag` filter on WP_Styles::do_item
+ * @param     string    $media     The style tag media parameter as sent by `script_loader_tag` filter on WP_Styles::do_item
+ * @return    string    $tag       The filter $tag variable with the noscript element
+ */
+function add_noscript_filter($tag, $handle, $src){
+    // as this filter will run for every enqueued script
+    // we need to check if the handle is equals the script
+    // we want to filter. If yes, than adds the noscript element
+    if ( 'script-handle' === $handle ){
+        $noscript = '<noscript>';
+        // you could get the inner content from other function
+        $noscript .= '<h1>You need to have JavaScript enabled to view this site.</h1>';
+        $noscript .= '</noscript>';
+        $tag = $tag . $noscript;
+    }
+        return $tag;
+}
+/**
+ * adds the add_noscript_filter function to the script_loader_tag filters
+ * it must use 3 as the last parameter to make $tag, $handle, $src available
+ * to the filter function
+ */
+add_filter('script_loader_tag', 'add_noscript_filter', 10, 3);
+
+/**
  * Filter to change cols and rows in "woocommerce checkout order notes"
  */
 // function custom_override_checkout_fields( $fields ) {
