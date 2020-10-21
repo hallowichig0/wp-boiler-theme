@@ -30,7 +30,7 @@ function bootstrap4_scripts() {
     // wp_enqueue_script('venobox-js', $directory_uri . '/vendor/venobox/venobox/venobox.min.js','','',true);
     // wp_enqueue_script('lazysizes-unveilhooks-js', $directory_uri . '/vendor/lazysizes/plugins/unveilhooks/ls.unveilhooks.min.js','','',true);
     // wp_enqueue_script('lazysizes-js', $directory_uri . '/vendor/lazysizes/lazysizes.min.js','','',true);
-    // wp_enqueue_style( 'mmenu-js', $directory_uri . '/vendor/mmenu-js/dist/mmenu.js', '','',true);
+    // wp_enqueue_script( 'mmenu-js', $directory_uri . '/vendor/mmenu-js/dist/mmenu.js', '','',true);
     // wp_enqueue_script('slick-js', $directory_uri . '/assets/slick/slick.js','','',true);
     wp_enqueue_script('theme-js', $directory_uri . '/js/main.js','','',true);
     wp_enqueue_script('custom-js', $directory_uri . '/js/custom.js','','',true);
