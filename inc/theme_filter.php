@@ -16,6 +16,14 @@ remove_filter('comment_text','wpautop',30);
 remove_filter( 'the_excerpt', 'wpautop' );
 
 /**
+ * Convert generated <p>&nbsp;</p> into </br> tag in content
+ */
+function add_newlines_to_post_content( $content ) {
+    return nl2br( $content );
+}
+add_filter ( 'the_content', 'add_newlines_to_post_content' );
+
+/**
  * Filter the except length to 20 words.
  */
 function wpdocs_custom_excerpt_length( $length ) {
