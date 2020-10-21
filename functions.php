@@ -71,25 +71,6 @@ function bootstrap4_widgets_init() {
 }
 add_action( 'widgets_init', 'bootstrap4_widgets_init' );
 
-// Override wordpress admin jquery default
-function override_wordpress_jquery () {
-	if (is_admin()) {
-		return;
-	}
-
-	global $wp_scripts;
-	if (isset($wp_scripts->registered['jquery']->ver)) {
-		$ver = $wp_scripts->registered['jquery']->ver;
-        $ver = str_replace("-wp", "", $ver);
-	} else {
-		$ver = '1.12.4';
-	}
-
-	wp_deregister_script('jquery');
-	wp_register_script('jquery', get_template_directory_uri() . "/vendor/jquery/dist/jquery.min.js", true, $ver);
-}
-add_action('init', 'override_wordpress_jquery');
-
 // widget search
 function get_widget_search(){
     get_template_part('inc/custom-widgets/widget', 'search');
