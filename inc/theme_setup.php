@@ -133,6 +133,16 @@ function theme_prefix_the_custom_logo() {
 }
 
 /**
+ * Default Favicon
+ */
+function favicon_default() {
+    if( ! has_site_icon()  && ! is_customize_preview() ) {
+        echo '<link rel="shortcut icon" type="image/x-icon" href="'.get_template_directory_uri().'/images/w-logo-blue.png" />';
+    }
+}
+add_action('wp_head', 'favicon_default');
+
+/**
  * pre_get_posts function added to include custom post type in author loop
  */
 function add_cpt_in_author( $query ) {
