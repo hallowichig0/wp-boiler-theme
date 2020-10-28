@@ -8,6 +8,12 @@
  */
 $get_template_directory = get_template_directory();
 
+/**
+ * Enqueue stylesheet and script.
+ * Using async on style. Just put this #asyncstyle at the end of src. (Ex. https://example.com/embed.css#asyncstyle)
+ * In enqueue style with async. This should be the output: wp_enqueue_style( 'myexternal-css', 'https://example.com/embed.css#asyncstyle', array(), '', 'print' );
+ * Using async on script. Just put this #asyncsript at the end of src. (Ex. https://example.com/embed.js#asyncscript)
+ */
 function bootstrap4_scripts() {
     $directory_uri = get_template_directory_uri();
 

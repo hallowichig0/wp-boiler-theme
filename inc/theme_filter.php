@@ -104,6 +104,34 @@ function add_noscript_filter($tag, $handle, $src){
 add_filter('script_loader_tag', 'add_noscript_filter', 10, 3);
 
 /**
+ * Add async on enqueue script
+ */
+function async_scripts($url)
+{
+    if ( strpos( $url, '#asynscript') === false )
+        return $url;
+    else if ( is_admin() )
+        return str_replace( '#asynscript', '', $url );
+    else
+	return str_replace( '#asynscript', '', $url )."' async='async"; 
+}
+add_filter( 'clean_url', 'async_scripts', 11, 1 );
+
+/**
+ * Change load of style to preload
+ */
+function async_style($url)
+{
+    if ( strpos( $url, '#asyncstyle') === false )
+        return $url;
+    else if ( is_admin() )
+        return str_replace( '#asyncstyle', '', $url );
+    else
+	return str_replace( '#asyncstyle', '', $url )."' onload='this.media=\"all\""; 
+}
+add_filter( 'clean_url', 'async_style', 11, 1 );
+
+/**
  * Filter to change cols and rows in "woocommerce checkout order notes"
  */
 // function custom_override_checkout_fields( $fields ) {
