@@ -106,16 +106,16 @@ add_filter('script_loader_tag', 'add_noscript_filter', 10, 3);
 /**
  * Add async on enqueue script
  */
-function async_scripts($url)
+function async_script($url)
 {
-    if ( strpos( $url, '#asynscript') === false )
+    if ( strpos( $url, '#asyncscript') === false )
         return $url;
     else if ( is_admin() )
-        return str_replace( '#asynscript', '', $url );
+        return str_replace( '#asyncscript', '', $url );
     else
-	return str_replace( '#asynscript', '', $url )."' async='async"; 
+	return str_replace( '#asyncscript', '', $url )."' async='async"; 
 }
-add_filter( 'clean_url', 'async_scripts', 11, 1 );
+add_filter( 'clean_url', 'async_script', 11, 1 );
 
 /**
  * Change load of style to preload
