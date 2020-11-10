@@ -1,0 +1,15 @@
+<?php
+/**
+* Template Name: Sample Template
+*
+*/
+get_header();
+while ( have_posts() ) : the_post();
+?>
+<!-- Page Content -->
+<div id="content" class="site-content">
+    <?php get_template_part( 'template-parts/content', 'page' ); ?>
+</div><!-- #content -->
+<?php
+endwhile;
+get_footer();

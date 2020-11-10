@@ -5,7 +5,7 @@
     /*
     * Window Scroll
     */
-    $win.scroll(function () {
+    $win.scroll(function() {
 
     });
 
@@ -19,7 +19,7 @@
     /*
     * Document Ready
     */
-    $doc.ready(function(){
+    $doc.ready(function() {
         
     });
 

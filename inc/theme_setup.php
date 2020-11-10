@@ -7,6 +7,13 @@
  */
 
 /**
+ * Reusable error notice function for admin_head()
+ */
+function error_activation_admin_notice() {
+    echo '<style>#message2{border-left-color:#dc3232;}</style>';
+}
+
+/**
  * Display a pop-up message when trying to activate this theme without activated kirki plugin
  */
 function check_theme_dependencies( $oldtheme_name, $oldtheme ) {
@@ -58,9 +65,28 @@ function update_activation_admin_notice_acf( $translated, $original, $domain ) {
     return $translated;
 }
 
-function error_activation_admin_notice() {
-    echo '<style>#message2{border-left-color:#dc3232;}</style>';
+/**
+ * Add Welcome message to dashboard
+ */
+function bootstrap4_reminder(){
+    $theme_page_url = 'http://jegson.herokuapp.com/';
+
+    if(!get_option( 'triggered_welcomet')){
+        $message = sprintf(__( 'Welcome to Bootstrap4 Theme made by Jayson Garcia! Before diving in to your new theme, please visit the <a style="color: #fff; font-weight: bold;" href="%1$s" target="_blank">theme\'s</a> page for access to dozens of tips and in-depth tutorials.', 'bootstrap4' ),
+            esc_url( $theme_page_url )
+        );
+
+        printf(
+            '<div class="notice is-dismissible" style="background-color: #6C2EB9; color: #fff; border-left: none;">
+                <p>%1$s</p>
+            </div>',
+            $message
+        );
+        add_option( 'triggered_welcomet', '1', '', 'yes' );
+    }
 }
+add_action( 'admin_notices', 'bootstrap4_reminder' );
+
 if ( ! function_exists( 'bootstrap4_setup' ) ) {
     /**
      * Sets up theme defaults and registers support for various WordPress features.
@@ -112,7 +138,9 @@ if ( ! function_exists( 'bootstrap4_setup' ) ) {
         /*
         * All Custom thumbnails
         */
-        add_image_size( 'banner-scale', 1920, 1080, true );
+        add_image_size( 'banner-scale', 1920, 1080, true ); // scale
+        add_image_size( 'banner-scale-crop', 1920, 1080, array( 'center', 'center' ) ); // scale & crop
+        add_image_size( 'thumbnail-10-10', 10, 10, array( 'center', 'center' ) );
         
         /*
         * Register Navigation Menu
@@ -224,3 +252,17 @@ function show_template() {
         echo '<!-- Template File: ' . basename($template) . ' -->';
     }
 }
+
+/**
+ * Show menu pages on specific roles
+ */
+function remove_menu_pages() {
+
+    global $user_ID;
+
+    if( !current_user_can('administrator') ) {
+        // remove_menu_page('edit-comments.php'); // Comments
+        remove_menu_page('wpcf7'); // Contact Form 7 Menu
+    }
+}
+add_action( 'admin_init', 'remove_menu_pages' );

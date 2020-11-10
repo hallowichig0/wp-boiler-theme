@@ -36,14 +36,23 @@ function bootstrap4_scripts() {
     // wp_enqueue_script('venobox-js', $directory_uri . '/vendor/venobox/venobox/venobox.min.js','','',true);
     // wp_enqueue_script('lazysizes-unveilhooks-js', $directory_uri . '/vendor/lazysizes/plugins/unveilhooks/ls.unveilhooks.min.js','','',true);
     // wp_enqueue_script('lazysizes-js', $directory_uri . '/vendor/lazysizes/lazysizes.min.js','','',true);
+    // wp_enqueue_script('infinite-scroll-js', $directory_uri . '/vendor/infinite-scroll/dist/infinite-scroll.pkgd.min.js','','',true);
     // wp_enqueue_script( 'mmenu-js', $directory_uri . '/vendor/mmenu-js/dist/mmenu.js', '','',true);
     // wp_enqueue_script('slick-js', $directory_uri . '/assets/slick/slick.js','','',true);
     wp_enqueue_script('theme-js', $directory_uri . '/js/main.js','','',true);
-    wp_enqueue_script('custom-js', $directory_uri . '/js/custom.js','','',true);
+    wp_enqueue_script('global-js', $directory_uri . '/js/global.js','','',true);
 
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
-	}
+    }
+    
+    if( is_front_page() ) {
+        wp_enqueue_script('front-js', $directory_uri . '/js/front.js','','',true);
+    }
+
+    if( is_home() ) {
+        wp_enqueue_script('home-js', $directory_uri . '/js/home.js','','',true);
+    }
 }
 add_action( 'wp_enqueue_scripts', 'bootstrap4_scripts' );
 
@@ -119,29 +128,6 @@ function get_breadcrumb() {
     }
     echo '</ol>';
 }
-
-/**
- * Add Welcome message to dashboard
- */
-function bootstrap4_reminder(){
-    $theme_page_url = 'http://jegson.herokuapp.com/';
-
-        if(!get_option( 'triggered_welcomet')){
-            $message = sprintf(__( 'Welcome to Bootstrap4 Theme made by Jayson Garcia! Before diving in to your new theme, please visit the <a style="color: #fff; font-weight: bold;" href="%1$s" target="_blank">theme\'s</a> page for access to dozens of tips and in-depth tutorials.', 'bootstrap4' ),
-                esc_url( $theme_page_url )
-            );
-
-            printf(
-                '<div class="notice is-dismissible" style="background-color: #6C2EB9; color: #fff; border-left: none;">
-                    <p>%1$s</p>
-                </div>',
-                $message
-            );
-            add_option( 'triggered_welcomet', '1', '', 'yes' );
-        }
-
-}
-add_action( 'admin_notices', 'bootstrap4_reminder' );
 
 /**
  * Custom template tags for this theme.

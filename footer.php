@@ -9,46 +9,23 @@
  * @package Bootstrap4
  */
 
+// Kirki Variables
+$footer_bg = get_theme_mod('footer_background_setting');
+$footer_copyrightColor = get_theme_mod('footer_copyrightColor_setting');
+$footer_copyright = get_theme_mod('footer_copyrightText_setting');
 ?>
 </main><!-- #primary -->
-<footer class="site-footer py-4" style="background-color:<?php
-if(class_exists( 'Kirki' )){
-    $footer_bg = get_theme_mod('footer_background_setting');
-    if(isset($footer_bg) && !empty($footer_bg)):
-        echo $footer_bg;
-    else:
-        echo '#343a40';
-    endif;
-}else{
-    echo '#343a40';
-}
-?>">
+
+<footer class="site-footer py-4" style="background-color:<?php echo !empty($footer_bg) ? $footer_bg : '#343a40'; ?>">
     <div class="container">
         <div class="row">
-            <p class="m-0" style="color:<?php
-            if(class_exists( 'Kirki' )){
-                $footer_copyrightColor = get_theme_mod('footer_copyrightColor_setting');
-                if(isset($footer_copyrightColor) && !empty($footer_copyrightColor)):
-                    echo $footer_copyrightColor;
-                else:
-                    echo '#ffffff';
-                endif;
-            }else{
-                echo '#ffffff';
-            }
-            ?>">
-            <?php 
-            if(class_exists( 'Kirki' )){
-                $footer_copyright = get_theme_mod('footer_copyrightText_setting');
-                if(isset($footer_copyright) && !empty($footer_copyright)):
-                    echo 'Copyright &copy; ' . $footer_copyright;
-                else:
-                    echo 'Copyright &copy; Jayson Garcia' .' '. '2019-'.date("Y");
-                endif;
-            }else{
-                echo 'Copyright &copy; Jayson Garcia' .' '. '2019-'.date("Y");
-            }
-            ?></p>
+            <p class="m-0" style="color:<?php echo !empty($footer_copyrightColor) ? $footer_copyrightColor : '#ffffff'; ?>">
+                <?php if(isset($footer_copyright) && !empty($footer_copyright)): ?>
+                    Copyright &copy; <?php echo $footer_copyright; ?>
+                <?php else: ?>
+                    Copyright &copy; Jayson Garcia 2019-<?php echo date("Y"); ?>
+                <?php endif; ?>
+            </p>
         </div>
     </div>
     <!-- Back to top -->

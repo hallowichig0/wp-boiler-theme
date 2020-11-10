@@ -137,6 +137,15 @@ function async_style($url)
 add_filter( 'clean_url', 'async_style', 11, 1 );
 
 /**
+ * Filter Body Class
+ */
+function custom_body_class($classes) {
+    $classes[] = ''; // add class here
+    return $classes;
+}
+add_filter('body_class', 'custom_body_class');
+
+/**
  * Filter to change cols and rows in "woocommerce checkout order notes"
  */
 // function custom_override_checkout_fields( $fields ) {

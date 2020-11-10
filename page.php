@@ -17,13 +17,10 @@ while ( have_posts() ) : the_post();
 <!-- Page Content -->
 <div id="content" class="site-content">
 	<section class="container">
-        <?php
-        // Title
-        the_title("<h1>", "</h1>");
-
-        // Breadcrumb
-        get_breadcrumb();
-        ?>
+        <!-- Title -->
+        <?php the_title("<h1>", "</h1>"); ?>
+        <!-- Breadcrumb -->
+        <?php get_breadcrumb(); ?>
 		<div class="row">
             <?php
             get_template_part( 'template-parts/content', 'page' );

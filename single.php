@@ -5,6 +5,10 @@
  * @package Bootstrap4
  */
 get_header();
+
+// Kirki Variables
+$switch_sidebar = get_theme_mod('sidebar_blog_toggleSwitch_setting');
+
 while ( have_posts() ) : the_post();
 ?>
 <!-- Page Content -->
@@ -13,13 +17,11 @@ while ( have_posts() ) : the_post();
         
         <!-- Title -->
         <h1 class="entry-title mt-4">
-            <?php
-            if ( is_single() ) :
-                echo get_the_title();
-            else:
-                echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">'.get_the_title().'</a>';
-            endif;
-            ?>
+            <?php if ( is_single() ) : ?>
+                <?php echo get_the_title(); ?>
+            <?php else: ?>
+                <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php echo get_the_title(); ?></a>
+            <?php endif; ?>
 
             <!-- Author -->
             <small>
@@ -29,23 +31,10 @@ while ( have_posts() ) : the_post();
         </h1>
 
         <!-- Breadcrumb -->
-        <?php
-        get_breadcrumb();
-        ?>
+        <?php get_breadcrumb(); ?>
         
 		<div class="row">
-            <div class="col-sm-12 <?php
-            if(class_exists( 'Kirki' )){
-                if ( false == get_theme_mod('sidebar_blog_toggleSwitch_setting')) :
-                    echo 'col-md-12';
-                else:
-                    echo 'col-md-8';
-                endif;
-            }else{
-                echo 'col-md-12';
-            }
-            ?>">
-                    
+            <div class="col-sm-12 <?php echo !empty($switch_sidebar) ? 'col-md-12' : 'col-md-8'; ?>">
                 <!-- Post Content Column -->
                 <?php
                 get_template_part( 'template-parts/content', 'single' );
@@ -59,11 +48,9 @@ while ( have_posts() ) : the_post();
             </div><!-- #first -->
 
             <?php
-            if(class_exists( 'Kirki' )){
-                if ( true == get_theme_mod('sidebar_blog_toggleSwitch_setting')) :
-                    get_sidebar();
-                endif;
-            }
+            if ( $switch_sidebar == true ):
+                get_sidebar();
+            endif;
             ?>
         </div><!-- .row -->
 	</section><!-- .container -->
