@@ -44,7 +44,7 @@ $header_bg = get_theme_mod('header_background_field_setting');
 
 	<!-- Navigation -->
 	<header class="nav-header">
-		<nav class="navbar navbar-dark nav-top" style="background-color: <?php echo !empty($header_bg) ? $header_bg : '#ffffff'; ?>">
+		<nav class="navbar nav-top" style="background-color: <?php echo !empty($header_bg) ? $header_bg : '#ffffff'; ?>">
 			<div class="container px-sm-0">
 				<div class="navbar-nav">
 					<?php if(has_custom_logo()): ?>

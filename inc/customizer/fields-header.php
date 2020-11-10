@@ -72,7 +72,7 @@ if(class_exists( 'Kirki' )){
         Kirki::add_field( 'bootstrap4_config', [
             'type'        => 'color',
             'settings'    => 'header_contactColor_field_setting',
-            'label'       => __( 'Logo Text Color', 'bootstrap4' ),
+            'label'       => __( 'Contact Text Color', 'bootstrap4' ),
             'description' => esc_html__( 'This is a color control - without alpha channel.', 'bootstrap4' ),
             'section'     => 'header_contact',
             'default'     => '',

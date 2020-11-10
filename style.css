@@ -105,10 +105,10 @@ footer.site-footer {
  */
 /* Menu */
 .sticky-header-top {
-  margin-top: 88px !important; }
+  margin-top: 88px; }
 
 .sticky-header {
-  position: fixed !important;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
@@ -144,14 +144,16 @@ footer.site-footer {
     transform-origin: 10% 90%; }
 
 /* Active Links */
-.navbar-dark .navbar-nav > .nav-item {
+.navbar-nav > .nav-item {
   margin: 0 15px; }
-.navbar-dark .navbar-nav .nav-item.active {
+.navbar-nav .nav-item .nav-link {
+  color: #ffffff; }
+.navbar-nav .nav-item.active {
   background-color: #ffffff;
   border-radius: 5px; }
-  .navbar-dark .navbar-nav .nav-item.active > .nav-link {
+  .navbar-nav .nav-item.active > .nav-link {
     color: #000000; }
-.navbar-dark .navbar-nav .nav-item.dropdown .dropdown-menu .nav-link {
+.navbar-nav .nav-item.dropdown .dropdown-menu .nav-link {
   color: #000000; }
 
 /*

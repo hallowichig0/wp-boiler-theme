@@ -4,11 +4,11 @@
 
 /* Menu */
 .sticky-header-top {
-    margin-top: 88px !important;
+    margin-top: 88px;
 }
 
 .sticky-header {
-    position: fixed !important;
+    position: fixed;
     top: 0;
     right: 0;
     left: 0;
@@ -53,11 +53,14 @@
 }
 
 /* Active Links */
-.navbar-dark .navbar-nav{
+.navbar-nav{
     > .nav-item {
         margin: 0 15px;
     }
     .nav-item {
+        .nav-link {
+            color: $white;
+        }
         &.active {
             background-color: $white;
             border-radius: 5px; 
