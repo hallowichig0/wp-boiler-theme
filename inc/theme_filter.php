@@ -1,6 +1,15 @@
 <?php
 
 /**
+ * Define the image quality for JPEG manipulations. Ranges from 0 to 100. 
+ * Higher values mean better image quality but bigger files.
+ */
+function image_toolkit($arg){
+    return 90;
+}
+add_filter('jpeg_quality', 'image_toolkit');
+
+/**
  * Remove automatically </br> tag in content
  */
 function better_wpautop($p){
