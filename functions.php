@@ -26,11 +26,30 @@ function bootstrap4_scripts() {
     wp_enqueue_style( 'custom-css', $directory_uri . '/css/custom.css' );
     wp_enqueue_style( 'theme-css', get_stylesheet_uri() );
 
+    // Update jquery version (Frontend only)
+    if ( !is_admin() || !is_customize_preview() ) {
+        wp_deregister_script( 'jquery' );
+        // Deregister WP jQuery
+        wp_deregister_script( 'jquery-core' );
+        // Deregister WP jQuery Migrate
+        wp_deregister_script( 'jquery-migrate' );
+        // Register jQuery in the head
+        wp_register_script('jquery-core', $directory_uri . '/vendor/jquery/dist/jquery.min.js','','',true);
+
+        /**
+         * Register jquery using jquery-core as a dependency, so other scripts could use the jquery handle
+         * see https://wordpress.stackexchange.com/questions/283828/wp-register-script-multiple-identifiers
+         * We first register the script and afther that we enqueue it, see why:
+         * https://wordpress.stackexchange.com/questions/82490/when-should-i-use-wp-register-script-with-wp-enqueue-script-vs-just-wp-enque
+         * https://stackoverflow.com/questions/39653993/what-is-diffrence-between-wp-enqueue-script-and-wp-register-script
+         */
+        wp_register_script( 'jquery', false, array( 'jquery-core' ), null, false );
+        wp_enqueue_script( 'jquery' );
+    }
+
     // script
-    wp_enqueue_script('jquery');
-    wp_enqueue_script('jquery-js', $directory_uri . '/vendor/jquery/dist/jquery.min.js','','',true);
+    wp_enqueue_script('jquery-effects-core'); // get the wp core jquery-ui-effect
     wp_enqueue_script('jquery-once-js', $directory_uri . '/vendor/jquery-once/jquery.once.min.js','','',true);
-    wp_enqueue_script('jquery-ui-js', $directory_uri . '/vendor/jquery-ui-dist/jquery-ui.min.js','','',true);
     // wp_enqueue_script('jquery-match-height-js', $directory_uri . '/vendor/jquery-match-height/dist/jquery.matchHeight-min.js','','',true);
     wp_enqueue_script('bootstrap-js', $directory_uri . '/vendor/bootstrap/dist/js/bootstrap.min.js','','',true);
     // wp_enqueue_script('venobox-js', $directory_uri . '/vendor/venobox/venobox/venobox.min.js','','',true);
@@ -55,18 +74,6 @@ function bootstrap4_scripts() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'bootstrap4_scripts' );
-
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function bootstrap4_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'bootstrap4_content_width', 1200 );
-}
-add_action( 'after_setup_theme', 'bootstrap4_content_width', 0 );
 
 /**
  * Register widget area.
