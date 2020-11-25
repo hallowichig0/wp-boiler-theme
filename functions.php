@@ -19,17 +19,20 @@ function bootstrap4_scripts() {
 
     // css
     wp_enqueue_style( 'bootstrap-css', $directory_uri . '/vendor/bootstrap/dist/css/bootstrap.min.css' );
-    wp_enqueue_style( 'font-awesome-css', $directory_uri . '/vendor/font-awesome/css/font-awesome.min.css' );
     // wp_enqueue_style( 'venobox-css', $directory_uri . '/vendor/venobox/venobox/venobox.min.css' );
     // wp_enqueue_style( 'mmenu-css', $directory_uri . '/vendor/mmenu-js/dist/mmenu.css' );
+    wp_enqueue_style( 'font-awesome-css', $directory_uri . '/assets/font-awesome/css/font-awesome.css' );
     // wp_enqueue_style( 'slick-css', $directory_uri . '/assets/slick/slick.css' );
     wp_enqueue_style( 'custom-css', $directory_uri . '/css/custom.css' );
     wp_enqueue_style( 'theme-css', get_stylesheet_uri() );
 
-    // Update jquery version (Frontend only)
+    // Update jquery version & Remove unnecessary (Frontend only)
     if ( !is_admin() || !is_customize_preview() ) {
-        wp_deregister_script( 'jquery' );
+        // Dequeue Gutenberg Block CSS
+        wp_dequeue_style( 'wp-block-library' );
         // Deregister WP jQuery
+        wp_deregister_script( 'jquery' );
+        // Deregister WP jQuery Core
         wp_deregister_script( 'jquery-core' );
         // Deregister WP jQuery Migrate
         wp_deregister_script( 'jquery-migrate' );
@@ -57,6 +60,7 @@ function bootstrap4_scripts() {
     // wp_enqueue_script('lazysizes-js', $directory_uri . '/vendor/lazysizes/lazysizes.min.js','','',true);
     // wp_enqueue_script('infinite-scroll-js', $directory_uri . '/vendor/infinite-scroll/dist/infinite-scroll.pkgd.min.js','','',true);
     // wp_enqueue_script( 'mmenu-js', $directory_uri . '/vendor/mmenu-js/dist/mmenu.js', '','',true);
+    // wp_enqueue_script('nicescroll-js', $directory_uri . '/assets/nicescroll/jquery.nicescroll.js','','',true);
     // wp_enqueue_script('slick-js', $directory_uri . '/assets/slick/slick.js','','',true);
     wp_enqueue_script('theme-js', $directory_uri . '/js/main.js','','',true);
     wp_enqueue_script('global-js', $directory_uri . '/js/global.js','','',true);
