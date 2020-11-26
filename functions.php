@@ -23,7 +23,7 @@ function bootstrap4_scripts() {
     // wp_enqueue_style( 'mmenu-css', $directory_uri . '/vendor/mmenu-js/dist/mmenu.css' );
     wp_enqueue_style( 'font-awesome-css', $directory_uri . '/assets/font-awesome/css/font-awesome.css' );
     // wp_enqueue_style( 'slick-css', $directory_uri . '/assets/slick/slick.css' );
-    wp_enqueue_style( 'custom-css', $directory_uri . '/css/custom.css' );
+    // wp_enqueue_style( 'custom-css', $directory_uri . '/css/custom.css' );
     wp_enqueue_style( 'theme-css', get_stylesheet_uri() );
 
     // Update jquery version & Remove unnecessary styles and scripts (Frontend only)
