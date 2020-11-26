@@ -26,10 +26,16 @@ function bootstrap4_scripts() {
     wp_enqueue_style( 'custom-css', $directory_uri . '/css/custom.css' );
     wp_enqueue_style( 'theme-css', get_stylesheet_uri() );
 
-    // Update jquery version & Remove unnecessary (Frontend only)
+    // Update jquery version & Remove unnecessary styles and scripts (Frontend only)
     if ( !is_admin() || !is_customize_preview() ) {
         // Dequeue Gutenberg Block CSS
         wp_dequeue_style( 'wp-block-library' );
+	
+	/*
+        * Dequeue Gutenberg Block CSS
+        * if you want to embed other people's WordPress posts into your own WordPress posts, comment `wp-embed`
+        */
+        wp_deregister_script( 'wp-embed' );
         // Deregister WP jQuery
         wp_deregister_script( 'jquery' );
         // Deregister WP jQuery Core
