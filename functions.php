@@ -21,7 +21,7 @@ function bootstrap4_scripts() {
     wp_enqueue_style( 'bootstrap-css', $directory_uri . '/vendor/bootstrap/dist/css/bootstrap.min.css' );
     // wp_enqueue_style( 'venobox-css', $directory_uri . '/vendor/venobox/venobox/venobox.min.css' );
     // wp_enqueue_style( 'mmenu-css', $directory_uri . '/vendor/mmenu-js/dist/mmenu.css' );
-    wp_enqueue_style( 'font-awesome-css', $directory_uri . '/assets/font-awesome/css/font-awesome.css' );
+    wp_enqueue_style( 'font-awesome-css', $directory_uri . '/assets/font-awesome/css/font-awesome.css', array(), '4.7.0' );
     // wp_enqueue_style( 'slick-css', $directory_uri . '/assets/slick/slick.css' );
     // wp_enqueue_style( 'custom-css', $directory_uri . '/css/custom.css' );
     wp_enqueue_style( 'theme-css', get_stylesheet_uri() );
