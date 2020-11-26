@@ -62,6 +62,7 @@ function bootstrap4_scripts() {
     // wp_enqueue_script( 'mmenu-js', $directory_uri . '/vendor/mmenu-js/dist/mmenu.js', '','',true);
     // wp_enqueue_script('nicescroll-js', $directory_uri . '/assets/nicescroll/jquery.nicescroll.js','','',true);
     // wp_enqueue_script('slick-js', $directory_uri . '/assets/slick/slick.js','','',true);
+    wp_enqueue_script('plugins-js', $directory_uri . '/js/plugins.js','','',true);
     wp_enqueue_script('theme-js', $directory_uri . '/js/main.js','','',true);
     wp_enqueue_script('global-js', $directory_uri . '/js/global.js','','',true);
 

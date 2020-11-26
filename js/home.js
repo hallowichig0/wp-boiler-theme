@@ -1,4 +1,7 @@
 (function($){
+    /*
+    * Javacript for blog
+    */
     const $win = $(window);
     const $doc = $(document);
 

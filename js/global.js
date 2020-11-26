@@ -1,4 +1,7 @@
 (function($){
+    /*
+    * Global Javascript
+    */
     const $win = $(window);
     const $doc = $(document);
 

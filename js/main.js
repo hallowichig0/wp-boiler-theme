@@ -1,4 +1,7 @@
 (function($){
+    /*
+    * Theme Javascript
+    */
     const $win = $(window);
     const $doc = $(document);
 

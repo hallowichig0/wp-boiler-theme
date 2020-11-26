@@ -1,4 +1,7 @@
 (function($){
+    /*
+    * Javacript for front
+    */
     const $win = $(window);
     const $doc = $(document);
 
