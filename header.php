@@ -101,7 +101,7 @@ $header_bg = get_theme_mod('header_background_field_setting');
 									$social_classes = 'fa-instagram social-icon-instagram';
 								}
 								elseif($select_media == 'twitter'){
-									$social_classes = 'fa-twitter ocial-icon-twitter';
+									$social_classes = 'fa-twitter social-icon-twitter';
 								}
 								elseif($select_media == 'pinterest'){
 									$social_classes = 'fa-pinterest social-icon-pinterest';

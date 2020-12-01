@@ -3,7 +3,7 @@ Theme Name: Bootstrap4 Theme
 Author: Jayson Garcia
 Author URI: http://jegson.herokuapp.com/
 Description: My personal boiler theme.
-Version: 1.0.8
+Version: 1.0.9
 Tags: Bootstrap 4, SCSS, Kirki, ACF
 Text Domain: bootstrap4
 */
@@ -19,6 +19,8 @@ Text Domain: bootstrap4
 @import "partials/overrides";
 @import 'partials/social-media';
 @import 'partials/comment'; // comments style for blog
+@import "partials/plain";
+@import "partials/blur";
 
 /* Your fonts here */
 @import "partials/fonts";
