@@ -155,6 +155,22 @@ function custom_body_class($classes) {
 add_filter('body_class', 'custom_body_class');
 
 /**
+ * Update and replace featured image value with acf image field value
+ */
+function acf_set_featured_image( $value, $post_id, $field  ){
+    
+    if($value != ''){
+        // If post_thumbnail exists
+        delete_post_thumbnail( $post_id);
+        // Add the value which is the image ID to the _thumbnail_id meta data for the current post
+        add_post_meta($post_id, '_thumbnail_id', $value);
+    }
+    return $value;
+}
+// acf/update_value/name={$field_name} - filter for a specific field based on it's name
+add_filter('acf/update_value/name=post_thumbnail_field', 'acf_set_featured_image', 10, 3);
+
+/**
  * Disable Emoji Filters
  */
 function disable_emoji_feature() {
