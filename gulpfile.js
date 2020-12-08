@@ -74,6 +74,8 @@ const move_plugins = () => {
       "node_modules/lazysizes/**/*",
       "node_modules/infinite-scroll/**/*",
       "node_modules/mmenu-js/**/*",
+      "node_modules/aos/**/*",
+      "node_modules/slick-carousel/**/*",
     ], { base: './node_modules' })
     .pipe(gulp.dest('vendor'));
 }

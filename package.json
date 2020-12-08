@@ -27,6 +27,7 @@
     "jquery-once": "^2.2.3",
     "lazysizes": "^5.2.0",
     "mmenu-js": "^8.5.18",
+    "slick-carousel": "^1.8.1",
     "venobox": "^1.8.5"
   },
   "devDependencies": {
