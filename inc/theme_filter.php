@@ -213,8 +213,27 @@ function disable_emojis_tinymce( $plugins ) {
 	}
 	return $plugins;
 }
-
 add_action('init', 'disable_emoji_feature');
+
+/**
+ * Removes "Add Media" buttons from post types.
+ */
+function disable_media_button( $settings ) {
+    $current_screen = get_current_screen();
+
+    // Post types for which the media buttons should be removed.
+    $post_types = array( 'post', 'page' );
+
+    // Bail out if media buttons should not be removed for the current post type.
+    if ( ! $current_screen || ! in_array( $current_screen->post_type, $post_types, true ) ) {
+        return $settings;
+    }
+
+    $settings['media_buttons'] = false;
+
+    return $settings;
+}
+// add_filter( 'wp_editor_settings', 'disable_media_button');
 
 /**
  * Filter to change cols and rows in "woocommerce checkout order notes"
