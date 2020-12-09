@@ -84,6 +84,40 @@ function add_additional_class_on_a($classes, $item, $args) {
 }
 add_filter('nav_menu_link_attributes', 'add_additional_class_on_a', 10, 3);
 
+/*
+ * Add ancestor class on `current_page_parent` parent
+ */
+function add_menu_parent_class( $items ) {
+    $parents = array();
+    foreach ( $items as $item ) {
+        if ( in_array('current_page_parent', $item->classes)  ) {
+            $parents[] = $item->menu_item_parent;
+        }
+    }
+
+    foreach ( $items as $item ) {
+        if ( in_array( $item->ID, $parents ) ) {
+            $item->classes[] = 'current_page_ancestor'; 
+        }
+    }
+
+    return $items;    
+}
+add_filter( 'wp_nav_menu_objects', 'add_menu_parent_class' );
+
+/*
+ * Add active class on parent and grandparent menu while you are in a single post or page
+ */
+function add_active_grandparent_parent_class($classes, $item) {
+
+    if( in_array( 'current_page_parent', $classes ) || in_array( 'current_page_ancestor', $classes ) ) {
+        $classes[] = 'active';
+    }
+
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'add_active_grandparent_parent_class', 10, 2 );
+
 /**
  * @summary        filters an enqueued style tag and adds a noscript element after it
  * 
