@@ -25,7 +25,7 @@ $switch_sidebar = get_theme_mod('sidebar_blog_toggleSwitch_setting');
 			
 				<?php if ( have_posts() ) { ?>
 					<?php if ( is_home() && ! is_front_page() ): ?>
-						<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+						<h1 class="page-title"><?php single_post_title(); ?></h1>
 					<?php endif; ?>
 					
 					<?php
