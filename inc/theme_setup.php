@@ -257,9 +257,6 @@ function show_template() {
  * Show menu pages on specific roles
  */
 function remove_menu_pages() {
-
-    global $user_ID;
-
     if( !current_user_can('administrator') ) {
         // remove_menu_page('edit-comments.php'); // Comments
         remove_menu_page('wpcf7'); // Contact Form 7 Menu
