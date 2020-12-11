@@ -195,4 +195,9 @@ require_once ($get_template_directory . '/inc/custom-post-type.php');
  */
 require_once ($get_template_directory . '/inc/shortcodes.php');
 
+/**
+ * All ajax handler.
+ */
+require_once ($get_template_directory . '/inc/ajax-handler.php');
+
 include_once get_theme_file_path( 'inc/kirki/class-kirki-installer-section.php' );
