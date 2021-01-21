@@ -63,11 +63,12 @@
             accessibility: false
         }).on('init', function(event, slick, currentSlide, nextSlide){
             // for infinite scroll - autoplay after re initialize slick
-            $this.each(function(){
-                $(this).slick('slickPlay');
+            $(this).each(function(){
+                var tis = $(this);
+                tis.slick('slickPlay');
             });
         }).on('afterChange', function(event, slick, currentSlide, nextSlide){
-            $this.each(function(){
+            $(this).each(function(){
                 var current_slick = $(this).find('.slick-active');
                 var slick_img = $(this).find('.slick-active .slick-image');
                 var slick_img_clone = $(this).find('.slick-cloned .slick-image');
@@ -84,9 +85,9 @@
                 }
 
                 if(slick_img.hasClass('lazyloaded')){
-                    $(this).slick('slickPlay');
+                    tis.slick('slickPlay');
                 }else{
-                    $(this).slick('slickPause');
+                    tis.slick('slickPause');
                 }
                 
                 slick_img.on('lazyloaded', function(){
