@@ -16,7 +16,7 @@ $footer_copyright = get_theme_mod('footer_copyrightText_setting');
 ?>
 </main><!-- #primary -->
 
-<footer class="site-footer py-4" style="background-color:<?php echo !empty($footer_bg) ? $footer_bg : '#343a40'; ?>">
+<footer id="footer" class="site-footer py-4" style="background-color:<?php echo !empty($footer_bg) ? $footer_bg : '#343a40'; ?>">
     <div class="container">
         <div class="row">
             <p class="m-0" style="color:<?php echo !empty($footer_copyrightColor) ? $footer_copyrightColor : '#ffffff'; ?>">
