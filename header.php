@@ -43,7 +43,7 @@ $header_bg = get_theme_mod('header_background_field_setting');
 	</div>
 
 	<!-- Navigation -->
-	<header class="nav-header">
+	<header id="header" class="nav-header">
 		<nav class="navbar nav-top" style="background-color: <?php echo !empty($header_bg) ? $header_bg : '#ffffff'; ?>">
 			<div class="container px-sm-0">
 				<div class="navbar-nav">
