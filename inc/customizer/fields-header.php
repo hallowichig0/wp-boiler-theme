@@ -116,6 +116,9 @@ if(class_exists( 'Kirki' )){
                     'default'     => '',
                 ),
             ],
+            'choices' => [
+                'limit' => 5,
+            ],
         ] );
 
 }
