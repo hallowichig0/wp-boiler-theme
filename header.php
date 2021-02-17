@@ -90,10 +90,10 @@ $header_bg = get_theme_mod('header_background_field_setting');
 					?>
 						<div class="navbar-brand col-md-6 px-0 py-0 social-menu">
 							<?php
+							$social_classes = '';
 							foreach($media_repeater as $social_media):
 								$select_media = $social_media['header_social_media_select'];
 								$link_media = $social_media['header_social_media_link'];
-								$social_classes = '';
 								if($select_media == 'fb'){
 									$social_classes = 'fa-facebook social-icon-fb';
 								}
