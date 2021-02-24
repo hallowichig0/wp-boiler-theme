@@ -10,6 +10,13 @@ function image_toolkit($arg){
 add_filter('jpeg_quality', 'image_toolkit');
 
 /**
+ * Close comments on the front-end
+ */
+// add_filter('comments_open', '__return_false', 20, 2);
+add_filter('pings_open', '__return_false', 20, 2);
+add_filter( 'wpcf7_autop_or_not', '__return_false' ); // remove <p> & <br> in contact form 7
+
+/**
  * Remove automatically </br> tag in content
  */
 function better_wpautop($p){
