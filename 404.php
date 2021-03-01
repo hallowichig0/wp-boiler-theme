@@ -12,7 +12,7 @@ get_header(); ?>
 <div id="content" class="site-content">
 	<section class="container">
 		<div class="row">
-			<div class="col-sm-12 col-lg-8">
+			<div class="col-12">
 
 				<section class="error-404 not-found">
 					<header class="page-header">

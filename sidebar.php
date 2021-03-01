@@ -11,7 +11,7 @@
 if (is_home() || is_singular( array('post') )) {
 ?>
     <!-- Sidebar Widgets Column -->
-    <aside id="secondary" class="widget-area col-sm-12 col-md-4" role="complementary">
+    <aside id="secondary" class="widget-area col-12 col-md-4" role="complementary">
     <?php dynamic_sidebar( 'sidebar-blog' ); ?>
     <?php
     $widgets = get_theme_mod('sidebar_blog_widget_repeater');

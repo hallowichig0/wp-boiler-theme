@@ -21,7 +21,7 @@ $switch_sidebar = get_theme_mod('sidebar_blog_toggleSwitch_setting');
 <div id="content" class="site-content">
 	<section class="container">
 		<div class="row">
-			<div class="col-sm-12 <?php echo $switch_sidebar == false ? 'col-md-12' : 'col-md-8'; ?>">
+			<div class="col-12 <?php echo $switch_sidebar == false ? 'col-md-12' : 'col-md-8'; ?>">
 			
 				<?php if ( have_posts() ) { ?>
 					<?php if ( is_home() && ! is_front_page() ): ?>
