@@ -77,7 +77,7 @@ const move_plugins = () => {
       "node_modules/aos/**/*",
       "node_modules/slick-carousel/**/*",
     ], { base: './node_modules' })
-    .pipe(gulp.dest('vendor'));
+    .pipe(gulp.dest('library'));
 }
 
 /**

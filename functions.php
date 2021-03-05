@@ -18,12 +18,12 @@ function bootstrap4_scripts() {
     $directory_uri = get_template_directory_uri();
 
     // css
-    wp_enqueue_style( 'bootstrap-css', $directory_uri . '/vendor/bootstrap/dist/css/bootstrap.min.css' );
-    // wp_enqueue_style( 'venobox-css', $directory_uri . '/vendor/venobox/venobox/venobox.min.css' );
-    // wp_enqueue_style( 'mmenu-css', $directory_uri . '/vendor/mmenu-js/dist/mmenu.css' );
-    // wp_enqueue_style( 'aos-css', $directory_uri . '/vendor/aos/dist/aos.css' );
+    wp_enqueue_style( 'bootstrap-css', $directory_uri . '/library/bootstrap/dist/css/bootstrap.min.css' );
+    // wp_enqueue_style( 'venobox-css', $directory_uri . '/library/venobox/venobox/venobox.min.css' );
+    // wp_enqueue_style( 'mmenu-css', $directory_uri . '/library/mmenu-js/dist/mmenu.css' );
+    // wp_enqueue_style( 'aos-css', $directory_uri . '/library/aos/dist/aos.css' );
     wp_enqueue_style( 'font-awesome-css', $directory_uri . '/assets/font-awesome/css/font-awesome.css', array(), '4.7.0' );
-    // wp_enqueue_style( 'slick-css', $directory_uri . '/vendor/slick-carousel/slick/slick.css' );
+    // wp_enqueue_style( 'slick-css', $directory_uri . '/library/slick-carousel/slick/slick.css' );
     // wp_enqueue_style( 'custom-css', $directory_uri . '/css/custom.css' );
     wp_enqueue_style( 'theme-css', get_stylesheet_uri() );
 
@@ -44,7 +44,7 @@ function bootstrap4_scripts() {
         // Deregister WP jQuery Migrate
         wp_deregister_script( 'jquery-migrate' );
         // Register jQuery in the head
-        wp_register_script('jquery-core', $directory_uri . '/vendor/jquery/dist/jquery.min.js','','',true);
+        wp_register_script('jquery-core', $directory_uri . '/library/jquery/dist/jquery.min.js','','',true);
 
         /**
          * Register jquery using jquery-core as a dependency, so other scripts could use the jquery handle
@@ -59,17 +59,17 @@ function bootstrap4_scripts() {
 
     // script
     wp_enqueue_script('jquery-effects-core'); // get the wp core jquery-ui-effect
-    wp_enqueue_script('jquery-once-js', $directory_uri . '/vendor/jquery-once/jquery.once.min.js','','',true);
-    // wp_enqueue_script('jquery-match-height-js', $directory_uri . '/vendor/jquery-match-height/dist/jquery.matchHeight-min.js','','',true);
-    wp_enqueue_script('bootstrap-js', $directory_uri . '/vendor/bootstrap/dist/js/bootstrap.min.js','','',true);
-    // wp_enqueue_script('venobox-js', $directory_uri . '/vendor/venobox/venobox/venobox.min.js','','',true);
-    // wp_enqueue_script('lazysizes-unveilhooks-js', $directory_uri . '/vendor/lazysizes/plugins/unveilhooks/ls.unveilhooks.min.js','','',true);
-    // wp_enqueue_script('lazysizes-js', $directory_uri . '/vendor/lazysizes/lazysizes.min.js','','',true);
-    // wp_enqueue_script('infinite-scroll-js', $directory_uri . '/vendor/infinite-scroll/dist/infinite-scroll.pkgd.min.js','','',true);
-    // wp_enqueue_script( 'mmenu-js', $directory_uri . '/vendor/mmenu-js/dist/mmenu.js', '','',true);
-    // wp_enqueue_script( 'aos-js', $directory_uri . '/vendor/aos/dist/aos.js', '','',true);
+    wp_enqueue_script('jquery-once-js', $directory_uri . '/library/jquery-once/jquery.once.min.js','','',true);
+    // wp_enqueue_script('jquery-match-height-js', $directory_uri . '/library/jquery-match-height/dist/jquery.matchHeight-min.js','','',true);
+    wp_enqueue_script('bootstrap-js', $directory_uri . '/library/bootstrap/dist/js/bootstrap.min.js','','',true);
+    // wp_enqueue_script('venobox-js', $directory_uri . '/library/venobox/venobox/venobox.min.js','','',true);
+    // wp_enqueue_script('lazysizes-unveilhooks-js', $directory_uri . '/library/lazysizes/plugins/unveilhooks/ls.unveilhooks.min.js','','',true);
+    // wp_enqueue_script('lazysizes-js', $directory_uri . '/library/lazysizes/lazysizes.min.js','','',true);
+    // wp_enqueue_script('infinite-scroll-js', $directory_uri . '/library/infinite-scroll/dist/infinite-scroll.pkgd.min.js','','',true);
+    // wp_enqueue_script( 'mmenu-js', $directory_uri . '/library/mmenu-js/dist/mmenu.js', '','',true);
+    // wp_enqueue_script( 'aos-js', $directory_uri . '/library/aos/dist/aos.js', '','',true);
     // wp_enqueue_script('nicescroll-js', $directory_uri . '/assets/nicescroll/jquery.nicescroll.js','','',true);
-    // wp_enqueue_script('slick-js', $directory_uri . '/vendor/slick-carousel/slick/slick.js','','',true);
+    // wp_enqueue_script('slick-js', $directory_uri . '/library/slick-carousel/slick/slick.js','','',true);
     wp_enqueue_script('plugins-js', $directory_uri . '/js/plugins.js','','',true);
     wp_enqueue_script('theme-js', $directory_uri . '/js/main.js','','',true);
     wp_enqueue_script('global-js', $directory_uri . '/js/global.js','','',true);
