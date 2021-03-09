@@ -135,21 +135,6 @@ if ( ! function_exists( 'bootstrap4_setup' ) ) {
 	    'gallery',
             'caption',
         ) );
-	    
-	/*
-        * Enable support for Post Formats.
-        *
-        * See: https://codex.wordpress.org/Post_Formats
-        */
-	add_theme_support('post-formats', array(
-            'aside',
-            'image',
-            'video',
-            'quote',
-            'link',
-            'gallery',
-            'audio',
-        ));
 
         /*
         * All Custom thumbnails
