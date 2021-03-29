@@ -26,5 +26,5 @@ function get_archive_by_year_and_month(){
         }
         $html.='</ul>';
     }
-    echo $html;
+    return $html;
 }

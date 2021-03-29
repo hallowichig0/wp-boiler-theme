@@ -122,7 +122,8 @@ function get_widget_archive() {
 
 // breadcrumb
 function get_breadcrumb() {
-    echo '
+    $html = '';
+    $html .= '
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="'.home_url().'" rel="nofollow">Home</a>
@@ -134,18 +135,20 @@ function get_breadcrumb() {
             foreach((get_the_category()) as $category) {
                 $cat_title = $category->cat_name . ' ';
                 $cat_link = get_category_link($category->cat_ID);
-                echo '<li class="breadcrumb-item"><a href="'.$cat_link.'">'.$cat_title.'</a></li>';
+                $html .= '<li class="breadcrumb-item"><a href="'.$cat_link.'">'.$cat_title.'</a></li>';
             }
         // }
         if (is_single()) {
 
             // single post title
-            echo '<li class="breadcrumb-item active">'.get_the_title().'</li>';         
+            $html .= '<li class="breadcrumb-item active">'.get_the_title().'</li>';         
         }
     } elseif (is_page()) {
-        echo '<li class="breadcrumb-item active">'.get_the_title().'</li>';
+        $html .= '<li class="breadcrumb-item active">'.get_the_title().'</li>';
     }
-    echo '</ol>';
+    $html .= '</ol>';
+
+    return $html;
 }
 
 /**

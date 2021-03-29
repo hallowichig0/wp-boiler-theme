@@ -12,7 +12,7 @@
 <h5 class="card-header">Archives</h5>
     <div class="card-body">
         <div class="row">
-			<?php get_archive_by_year_and_month(); ?>
+			<?php echo get_archive_by_year_and_month(); ?>
         </div>
     </div>
 </div>

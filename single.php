@@ -31,7 +31,7 @@ while ( have_posts() ) : the_post();
         </h1>
 
         <!-- Breadcrumb -->
-        <?php get_breadcrumb(); ?>
+        <?php echo get_breadcrumb(); ?>
         
 		<div class="row">
             <div class="col-12 <?php echo !empty($switch_sidebar) ? 'col-md-12' : 'col-md-8'; ?>">
