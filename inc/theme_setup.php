@@ -421,6 +421,25 @@ function remove_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'remove_customize_register', 100 );
 
+// Removes the Yoast Metabox for Roles other then Admins
+function disable_seo_yoast_metabox() {
+    remove_meta_box( 'wpseo_meta', 'post', 'normal' );
+    remove_meta_box( 'wpseo_meta', 'page', 'normal' );
+}
+
+// Disable WordPress SEO meta box for all roles other than administrator and seo
+function wpseo_yoast_init(){
+    $user = wp_get_current_user();
+    $allowed_roles = array('administrator', 'wpseo_manager', 'wpseo_editor');
+    if( !array_intersect($allowed_roles, $user->roles) ) {
+        // Remove page analysis columns from post lists, also SEO status on post editor
+        add_filter( 'wpseo_use_page_analysis', '__return_false' );
+        // Remove Yoast meta boxes
+        add_action( 'add_meta_boxes', 'disable_seo_yoast_metabox', 100000 );
+    }
+}
+add_action('init', 'wpseo_yoast_init');
+
 /**
  * Disable Comments Menu
  */
