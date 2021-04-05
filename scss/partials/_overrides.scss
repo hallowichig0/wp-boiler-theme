@@ -29,6 +29,41 @@
 }
 
 /*
+ * CF7 Ajax Loader Spinner
+ */
+.ajax-loader {
+    position: absolute !important;
+    top: 50%;
+    left: 50%;
+    @include transform(
+        translate(-50%, -50%)
+    );
+    background: transparent !important;
+    background-image: unset !important;
+    border-radius: unset !important;
+    width: 70px !important;
+    height: 70px !important;
+    font-size: 0;
+    opacity: 1;
+    padding: 0;
+    margin: 0 !important;
+    &:before {
+        display: none;
+    }
+    &:after {
+        content: " ";
+        display: block;
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        border: 6px solid #000000;
+        border-color: #000000 transparent #000000 transparent;
+        animation: lds-dual-ring 1.2s linear infinite;
+        margin-top: -10px;
+    }
+}
+
+/*
  * CF7 validation response
  */
 .wpcf7-response-output {
