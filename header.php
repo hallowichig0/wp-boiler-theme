@@ -12,7 +12,9 @@ $get_template_directory = get_template_directory();
 
 // Default Logo Variables
 $custom_logo_id = get_theme_mod( 'custom_logo' );
-$header_logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+$header_logo_src = wp_get_attachment_image_url( $custom_logo_id , 'full' );
+$header_logo_srcset = wp_get_attachment_image_srcset( $custom_logo_id , 'full' );
+$header_logo_sizes = wp_get_attachment_image_sizes( $custom_logo_id , 'full' 
 
 // Kirki Variables
 $header_bg = get_theme_mod('header_background_field_setting');
@@ -49,7 +51,7 @@ $header_bg = get_theme_mod('header_background_field_setting');
 				<div class="navbar-nav">
 					<?php if(has_custom_logo()): ?>
 						<a href="<?php echo esc_url( home_url( '/' )); ?>">
-							<img src="<?php echo $header_logo[0]; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" height="40px" width="100px">
+							<img src="<?php echo $header_logo_src; ?>" rcset="<?php echo $header_logo_srcset; ?>" sizes="<?php echo $header_logo_sizes; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" height="40px" width="100px">
 						</a>
 					<?php
 					else:
