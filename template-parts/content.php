@@ -20,7 +20,7 @@ global $post;
             * To apply lazysizes with blurred effect. Use get_the_post_thumbnail_url instead
             * and apply the html structure of blurred effect.
             */
-            echo get_the_post_thumbnail( $post->ID, 'post-thumbnails', array( 'class' => 'img-fluid rounded' ) );
+            echo get_the_post_thumbnail( $post->ID, 'post-thumbnails' );
         } 
         ?>
         <div class="card-body">
