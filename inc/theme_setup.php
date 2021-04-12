@@ -381,6 +381,9 @@ function show_template() {
 //     // remove_post_type_support('custom-post-type-name', 'editor');
 // });
 
+/**
+ * Show classic editor on specific templates
+ */
 // add_action('init', function() {
 //     if (isset($_GET['post'])) {
 //         $id = $_GET['post'];
