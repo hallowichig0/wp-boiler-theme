@@ -363,6 +363,46 @@ function show_template() {
 }
 
 /**
+ * Show classic editor on specific editor posts & pages
+ *
+ * @return void
+ */
+// add_action( 'admin_head', function () {
+//     // remove classic editor in homepage
+//     if((int) get_option('page_on_front')==get_the_ID()){
+//         // the below removes 'editor' support for 'pages'
+//         remove_post_type_support('page', 'editor');
+//     }
+//     // remove page editor globally
+//     // remove_post_type_support('page', 'editor');
+//     // remove post editor globally
+//     // remove_post_type_support('post', 'editor');
+//     // add this line for custom post types and replace custom-post-type-name with the name of post type:
+//     // remove_post_type_support('custom-post-type-name', 'editor');
+// });
+
+// add_action('init', function() {
+//     if (isset($_GET['post'])) {
+//         $id = $_GET['post'];
+//         $template = get_post_meta($id, '_wp_page_template', true);
+//         switch ($template) {
+//             case 'page-templates/your-template-name.php':
+//                 // the below removes 'editor' support for 'pages'
+//                 remove_post_type_support('page', 'editor');
+//                 // if you want to remove for posts or custom post types as well add this line for posts:
+//                 // remove_post_type_support('post', 'editor');
+//                 // add this line for custom post types and replace 
+//                 // custom-post-type-name with the name of post type:
+//                 // remove_post_type_support('custom-post-type-name', 'editor');
+//             break;
+//             default :
+//             // Don't remove any other template.
+//             break;
+//         }
+//     }
+// });
+
+/**
  * Show menu pages on specific roles
  */
 function remove_menu_pages() {
