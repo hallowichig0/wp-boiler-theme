@@ -364,8 +364,6 @@ function show_template() {
 
 /**
  * Show classic editor on specific editor posts & pages
- *
- * @return void
  */
 // add_action( 'admin_head', function () {
 //     // remove classic editor in homepage
