@@ -519,4 +519,4 @@ add_action( 'login_enqueue_scripts', function() { ?>
             max-width: 80px;
         }
     </style>
-<?php } );
+<?php });
