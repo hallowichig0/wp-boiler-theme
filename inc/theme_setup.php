@@ -507,3 +507,16 @@ function remove_comment_admin_bar() {
     $wp_admin_bar->remove_menu('comments');
 }
 // add_action( 'wp_before_admin_bar_render', 'remove_comment_admin_bar' );
+
+add_action( 'login_enqueue_scripts', function() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+            background-image: url(<?php echo asset('images/w-logo-blue.png')->uri(); ?>);
+            background-size: 100% 80px;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 80px;
+            max-width: 80px;
+        }
+    </style>
+<?php } );
