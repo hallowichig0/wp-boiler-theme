@@ -312,3 +312,11 @@ function prefix_add_defer_attribute( $tag, $handle ) {
 //     return $fields;
 // }
 // add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+
+add_filter( 'login_headerurl', function () {
+    return home_url();
+});
+
+add_filter( 'login_headertext', function () {
+    return get_bloginfo('name', 'display');
+});
