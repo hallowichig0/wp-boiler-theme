@@ -37,24 +37,6 @@ function bootstrap4_scripts() {
         * if you want to embed other people's WordPress posts into your own WordPress posts, comment `wp-embed`
         */
         wp_deregister_script( 'wp-embed' );
-        // Deregister WP jQuery
-        wp_deregister_script( 'jquery' );
-        // Deregister WP jQuery Core
-        wp_deregister_script( 'jquery-core' );
-        // Deregister WP jQuery Migrate
-        wp_deregister_script( 'jquery-migrate' );
-        // Register jQuery in the head
-        wp_register_script('jquery-core', $directory_uri . '/library/jquery/dist/jquery.min.js','','',true);
-
-        /**
-         * Register jquery using jquery-core as a dependency, so other scripts could use the jquery handle
-         * see https://wordpress.stackexchange.com/questions/283828/wp-register-script-multiple-identifiers
-         * We first register the script and afther that we enqueue it, see why:
-         * https://wordpress.stackexchange.com/questions/82490/when-should-i-use-wp-register-script-with-wp-enqueue-script-vs-just-wp-enque
-         * https://stackoverflow.com/questions/39653993/what-is-diffrence-between-wp-enqueue-script-and-wp-register-script
-         */
-        wp_register_script( 'jquery', false, array( 'jquery-core' ), null, false );
-        wp_enqueue_script( 'jquery' );
     }
 
     // script
@@ -86,6 +68,23 @@ function bootstrap4_scripts() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'bootstrap4_scripts' );
+
+/**
+ * Remove JQuery migrate
+ * https://joewp.com/en/remove-jquery-migrate/
+ */
+add_action('wp_default_scripts', function ($scripts)
+{
+    if (!is_admin() && isset($scripts->registered['jquery']) || !is_customize_preview()) {
+        $script = $scripts->registered['jquery'];
+        
+        if ($script->deps) { // Check whether the script has any dependencies
+            $script->deps = array_diff($script->deps, array(
+                'jquery-migrate'
+            ));
+        }
+    }
+});
 
 /**
  * Register widget area.
