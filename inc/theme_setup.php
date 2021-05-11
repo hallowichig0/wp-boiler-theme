@@ -481,6 +481,13 @@ function wpseo_yoast_init(){
 }
 add_action('init', 'wpseo_yoast_init');
 
+// remove yoast override noindex, unfollow in meta tag
+function yoast_no_home_noindex($string= "") {
+    $string= "";
+    return $string;
+}
+add_filter('wpseo_robots', 'yoast_no_home_noindex', 999);
+
 /**
  * Disable Comments Menu
  */
@@ -507,6 +514,21 @@ function remove_comment_admin_bar() {
     $wp_admin_bar->remove_menu('comments');
 }
 // add_action( 'wp_before_admin_bar_render', 'remove_comment_admin_bar' );
+
+// add tag inside head tag
+function add_tag_head(){
+    // meta tag robots
+    if(!is_404()) {
+    ?>
+        <meta name="robots" content="index, follow">
+    <?php
+    }else {
+    ?>
+        <meta name="robots" content="noindex, nofollow">
+    <?php
+    }
+}
+add_action('wp_head', 'add_tag_head');
 
 add_action( 'login_enqueue_scripts', function() { ?>
     <style type="text/css">
