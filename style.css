@@ -209,6 +209,9 @@ footer.site-footer {
   opacity: 1;
   padding: 0;
   margin: 0 !important; }
+  @media (max-width: 480px) {
+    .ajax-loader {
+      position: fixed !important; } }
   .ajax-loader:before {
     display: none; }
   .ajax-loader:after {
