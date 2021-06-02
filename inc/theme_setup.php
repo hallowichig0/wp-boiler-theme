@@ -525,7 +525,7 @@ function remove_item_admin_bar() {
     $wp_admin_bar->remove_menu('menus');
     $wp_admin_bar->remove_menu('widgets');
 }
-// add_action( 'wp_before_admin_bar_render', 'remove_comment_admin_bar' );
+// add_action( 'wp_before_admin_bar_render', 'remove_item_admin_bar' );
 
 // add tag inside head tag
 function add_tag_head(){
