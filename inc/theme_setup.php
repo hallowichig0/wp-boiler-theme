@@ -462,7 +462,17 @@ function remove_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'remove_customize_register', 100 );
 
-// Removes the Yoast Metabox for Roles other then Admins
+// Removes the Yoast Metabox for Taxonomy
+if( !array_intersect(array('administrator', 'wpseo_manager', 'wpseo_editor'), wp_get_current_user()->roles) ) {
+    class WPSEO_Taxonomy_Metabox {
+        public function display() { 
+            return false;
+        } 
+        
+    }
+}
+
+// Removes the Yoast Metabox for Post Type
 function disable_seo_yoast_metabox() {
     remove_meta_box( 'wpseo_meta', 'post', 'normal' );
     remove_meta_box( 'wpseo_meta', 'page', 'normal' );
@@ -507,11 +517,13 @@ function remove_comment() {
 // add_action( 'admin_init', 'remove_comment' );
 
 /**
- * Disable Comments Admin Bar
+ * Disable items in Admin Bar
  */
-function remove_comment_admin_bar() {
+function remove_item_admin_bar() {
     global $wp_admin_bar;
     $wp_admin_bar->remove_menu('comments');
+    $wp_admin_bar->remove_menu('menus');
+    $wp_admin_bar->remove_menu('widgets');
 }
 // add_action( 'wp_before_admin_bar_render', 'remove_comment_admin_bar' );
 
