@@ -8,7 +8,7 @@
     /*
     * Window Scroll
     */
-    $win.scroll(function() {
+    $win.on('scroll', function() {
 
     });
 
