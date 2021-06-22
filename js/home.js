@@ -22,7 +22,7 @@
     /*
     * Document Ready
     */
-    $doc.ready(function() {
+    $(function() {
         
     });
 
