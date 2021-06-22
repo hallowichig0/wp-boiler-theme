@@ -38,13 +38,6 @@
     }
     
     /*
-    * Window Resize
-    */
-    $win.resize(function () {
-        
-    });
-    
-    /*
     * Window Scroll
     */
     $win.on('scroll', function() {
@@ -77,7 +70,7 @@
     /*
     * Document Ready
     */
-    $doc.ready(function(){
+    $(function() {
         // CF7 validation events for changing response CSS classes
         // document.addEventListener( 'wpcf7invalid', function( event ) {
         //     $('.wpcf7-response-output').removeClass('alert-warning');
@@ -99,6 +92,13 @@
         //     $('.wpcf7-response-output').removeClass('alert-danger');
         //     $('.wpcf7-response-output').addClass('alert alert-success');
         // }, false );
+
+        /*
+        * Window Resize
+        */
+        $win.on('resize', function () {
+            
+        });
     });
 
 })( jQuery );
