@@ -412,7 +412,7 @@ function remove_menu_pages() {
         remove_menu_page('wpcf7'); // Contact Form 7 Menu
     }
 }
-add_action( 'admin_init', 'remove_menu_pages' );
+add_action( 'admin_head', 'remove_menu_pages' );
 
 /**
  * Hide submenu on appearance menu
