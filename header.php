@@ -53,7 +53,7 @@ $header_bg = get_theme_mod('header_background_field_setting');
 					<div class="navbar-nav">
 						<?php if(has_custom_logo()): ?>
 							<a href="<?php echo esc_url( home_url( '/' )); ?>">
-								<img src="<?php echo $header_logo_src; ?>" rcset="<?php echo $header_logo_srcset; ?>" sizes="<?php echo $header_logo_sizes; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" height="40px" width="100px">
+								<img src="<?php echo $header_logo_src; ?>" srcset="<?php echo $header_logo_srcset; ?>" sizes="<?php echo $header_logo_sizes; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" height="40px" width="100px">
 							</a>
 						<?php
 						else:
