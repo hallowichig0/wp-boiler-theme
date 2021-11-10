@@ -31,7 +31,9 @@ while ( have_posts() ) : the_post();
         </h1>
 
         <!-- Breadcrumb -->
-        <?php echo get_breadcrumb(); ?>
+        <?php if(function_exists('bcn_display')): ?>
+            <?php bcn_display(); ?>
+        <?php endif; ?>
         
 		<div class="row">
             <div class="col-12 <?php echo !empty($switch_sidebar) ? 'col-md-12' : 'col-md-8'; ?>">

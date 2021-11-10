@@ -3,7 +3,7 @@ Theme Name: Bootstrap4 Theme
 Author: Jayson Garcia
 Author URI: http://jegson.herokuapp.com/
 Description: My personal boiler theme.
-Version: 1.1.2
+Version: 1.1.3
 Tags: Bootstrap 4, SCSS, Kirki, ACF
 Text Domain: bootstrap4
 */
@@ -20,6 +20,11 @@ Text Domain: bootstrap4
 @keyframes spin {
   100% {
     -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg); }
+  100% {
     transform: rotate(360deg); } }
 /*
  * Global

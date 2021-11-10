@@ -119,37 +119,6 @@ function get_widget_archive() {
     get_template_part('inc/custom-widgets/widget', 'archive');
 }
 
-// breadcrumb
-function get_breadcrumb() {
-    $html = '';
-    $html .= '
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="'.home_url().'" rel="nofollow">Home</a>
-        </li>
-    ';
-    if (is_category() || is_single()) {
-        // if (is_category()) {
-            
-            foreach((get_the_category()) as $category) {
-                $cat_title = $category->cat_name . ' ';
-                $cat_link = get_category_link($category->cat_ID);
-                $html .= '<li class="breadcrumb-item"><a href="'.$cat_link.'">'.$cat_title.'</a></li>';
-            }
-        // }
-        if (is_single()) {
-
-            // single post title
-            $html .= '<li class="breadcrumb-item active">'.get_the_title().'</li>';         
-        }
-    } elseif (is_page()) {
-        $html .= '<li class="breadcrumb-item active">'.get_the_title().'</li>';
-    }
-    $html .= '</ol>';
-
-    return $html;
-}
-
 /**
  * Custom template tags for this theme.
  */

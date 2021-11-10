@@ -20,7 +20,9 @@ while ( have_posts() ) : the_post();
         <!-- Title -->
         <?php the_title("<h1>", "</h1>"); ?>
         <!-- Breadcrumb -->
-        <?php get_breadcrumb(); ?>
+        <?php if(function_exists('bcn_display')): ?>
+            <?php bcn_display(); ?>
+        <?php endif; ?>
 		<div class="row">
             <?php
             get_template_part( 'template-parts/content', 'page' );
