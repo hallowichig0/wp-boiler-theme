@@ -17,16 +17,6 @@ add_filter('pings_open', '__return_false', 20, 2);
 add_filter( 'wpcf7_autop_or_not', '__return_false' ); // remove <p> & <br> in contact form 7
 
 /**
- * Remove automatically </br> tag in content
- */
-function better_wpautop($p){
-    return wpautop($p,$br = false);
-}
-remove_filter( 'the_content', 'wpautop' );
-add_filter( 'the_content', 'better_wpautop' , 99);
-add_filter( 'the_content', 'shortcode_unautop',100 );
-
-/**
  * Remove automatically generated <p> & </br> tag in comment
  */
 remove_filter('comment_text','wpautop',30);
@@ -35,14 +25,6 @@ remove_filter('comment_text','wpautop',30);
  * Excerpt Filters
  */
 remove_filter( 'the_excerpt', 'wpautop' );
-
-/**
- * Convert generated <p>&nbsp;</p> into </br> tag in content
- */
-function add_newlines_to_post_content( $content ) {
-    return nl2br( $content );
-}
-add_filter ( 'the_content', 'add_newlines_to_post_content' );
 
 /**
  * Filter the except length to 20 words.
