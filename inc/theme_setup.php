@@ -532,3 +532,14 @@ add_action( 'login_enqueue_scripts', function() { ?>
         }
     </style>
 <?php });
+
+/**
+ * Disable cache when user is login.
+ * This will prevent bug when the user is viewing the updated page
+ */
+function disable_cache_on_user_login() {
+    if (is_user_logged_in()) {
+        echo '<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">';
+    }
+}
+add_action( 'wp_head', 'disable_cache_on_user_login');
