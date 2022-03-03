@@ -302,3 +302,6 @@ add_filter( 'login_headerurl', function () {
 add_filter( 'login_headertext', function () {
     return get_bloginfo('name', 'display');
 });
+
+// Stop WordPress from overwriting .htaccess permalink rules
+add_filter('flush_rewrite_rules_hard','__return_false');
